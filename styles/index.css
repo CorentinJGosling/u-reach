@@ -44,6 +44,13 @@ body {
     margin-right: 0.5rem;
   }
 }
+@media screen and (max-width: 500px) {
+  .landing {
+    flex-direction: column;
+    margin-left: 0.05rem;
+    margin-right: 0.05rem;
+  }
+}
 .landing .landing__desc {
   margin-left: 1rem;
 }
@@ -161,22 +168,22 @@ nav ul {
 .active {
   background: #00939c;
   border-radius: 30px;
-  padding: 0 1em;
+  padding: 0 1rem;
 }
 
 nav ul li {
   display: inline-block;
   width: 200px;
-  line-height: 3em;
+  line-height: 3rem;
 }
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  padding: 0 1em;
+  padding: 0 1rem;
 }
 @media screen and (max-width: 500px) {
   nav ul li {
-    width: 80vw;
+    width: 100%;
   }
 }
 
@@ -231,6 +238,12 @@ nav ul li:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   filter: brightness(80%);
 }
+@media screen and (max-width: 900px) {
+  .projects .ureach__list .ureach__right .ureach__proj1,
+  .projects .ureach__list .ureach__right .ureach__proj2 {
+    width: 90vw;
+  }
+}
 .projects .ureach__list .ureach__right .ureach__proj1:hover,
 .projects .ureach__list .ureach__right .ureach__proj2:hover {
   filter: brightness(100%);
@@ -251,7 +264,7 @@ nav ul li:hover {
   justify-content: center;
   gap: 0.5rem;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .projects .database__list {
     flex-direction: column;
   }
@@ -260,6 +273,11 @@ nav ul li:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .projects .database__list .database__right {
+    grid-template-columns: 1fr;
+  }
 }
 .projects .database__list .database__right .database__proj1,
 .projects .database__list .database__right .database__proj2,
@@ -273,6 +291,14 @@ nav ul li:hover {
   background-position: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   filter: brightness(80%);
+}
+@media screen and (max-width: 768px) {
+  .projects .database__list .database__right .database__proj1,
+  .projects .database__list .database__right .database__proj2,
+  .projects .database__list .database__right .database__proj3,
+  .projects .database__list .database__right .database__proj4 {
+    width: 90vw;
+  }
 }
 .projects .database__list .database__right .database__proj1:hover,
 .projects .database__list .database__right .database__proj2:hover,
@@ -316,6 +342,11 @@ nav ul li:hover {
   flex-direction: column;
   align-items: flex-start;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 768px) {
+  .projects .card__container-card {
+    width: 90vw;
+  }
 }
 .projects .card__container-card:hover:before {
   width: 100px;
@@ -515,6 +546,11 @@ nav ul li:hover {
 .registration #form_id input {
   margin-bottom: 1rem;
   height: 3rem;
+}
+@media screen and (max-width: 768px) {
+  .registration #form_id input {
+    width: 90vw;
+  }
 }
 
 #lead,

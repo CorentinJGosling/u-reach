@@ -48,6 +48,11 @@ body {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    margin-left: 0.05rem;
+    margin-right: 0.05rem;
+  }
 
   .landing__desc {
     margin-left: 1rem;
@@ -187,23 +192,23 @@ nav ul {
 .active {
   background: #00939c;
   border-radius: 30px;
-  padding: 0 1em;
+  padding: 0 1rem;
 }
 
 nav ul li {
   display: inline-block;
   width: 200px;
-  line-height: 3em;
+  line-height: 3rem;
 
   a {
     text-decoration: none;
     color: $nav-color;
-    padding: 0 1em;
+    padding: 0 1rem;
   }
 
   @media screen and (max-width: 500px) {
     // grid-template-columns: 1fr;
-    width: 80vw;
+    width: 100%;
   }
 }
 
@@ -258,6 +263,10 @@ nav ul li:hover {
         background-position: center;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         filter: brightness(80%);
+        @media screen and (max-width: 900px) {
+          width: 90vw;
+        }
+
         &:hover {
           filter: brightness(100%);
         }
@@ -282,7 +291,7 @@ nav ul li:hover {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 768px) {
       flex-direction: column;
     }
 
@@ -290,6 +299,9 @@ nav ul li:hover {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
 
       .database__proj1,
       .database__proj2,
@@ -303,6 +315,10 @@ nav ul li:hover {
         background-repeat: no-repeat;
         background-position: center;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        @media screen and (max-width: 768px) {
+          width: 90vw;
+        }
+
         filter: brightness(80%);
         &:hover {
           filter: brightness(100%);
@@ -347,6 +363,10 @@ nav ul li:hover {
       flex-direction: column;
       align-items: flex-start;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      @media screen and (max-width: 768px) {
+        width: 90vw;
+      }
+
       &:hover {
         &:before {
           width: 100px;
@@ -559,6 +579,10 @@ nav ul li:hover {
     input {
       margin-bottom: 1rem;
       height: 3rem;
+
+      @media screen and (max-width: 768px) {
+        width: 90vw;
+      }
     }
   }
 }
