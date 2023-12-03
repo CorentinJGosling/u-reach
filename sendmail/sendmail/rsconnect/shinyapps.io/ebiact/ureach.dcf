@@ -1,0 +1,12 @@
+name: ureach
+title: ureach
+username: ebiact
+account: ebiact
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10703325
+bundleId:
+url: https://ebiact.shinyapps.io/ureach/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

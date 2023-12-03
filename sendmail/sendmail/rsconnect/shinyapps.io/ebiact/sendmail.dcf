@@ -1,0 +1,12 @@
+name: sendmail
+title: sendmail
+username: ebiact
+account: ebiact
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10703338
+bundleId: 8001156
+url: https://ebiact.shinyapps.io/sendmail/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

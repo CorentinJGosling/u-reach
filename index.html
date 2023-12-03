@@ -27,7 +27,7 @@
     />
   </head>
   <body>
-    <section class="landing">
+    <section id="landing">
       <div class="landing__desc">
         <div class="desc__subtitle">
           A communication method about healthcare
@@ -35,20 +35,37 @@
         <div class="desc__title">
           U-REACH: Umbrella-Review, Evaluation, Analysis and Communication Hub
         </div>
+        <div class="desc__butons">
+          <a href="#projects" class="desc_button">
+            Ongoing U-REACH&nbsp;
+            <i class="fas fa-search"></i>
+          </a>
+          <a
+            href="https://ebiact.shinyapps.io/sendmail/"
+            target="_blank"
+            class="desc_button"
+          >
+            Register U-REACH &nbsp; <i class="far fa-save"></i>
+          </a>
+        </div>
       </div>
       <div class="landing__img">
         <img src="img/background.jpg" />
       </div>
     </section>
     <nav id="navbar">
-      <ul>
-        <li><a target="_blank" href="google.fr" href="">Home</a></li>
-        <li><a target="_blank" href="google.fr" href="">Projects</a></li>
-        <li><a target="_blank" href="google.fr" href="">Guidance</a></li>
-        <li><a target="_blank" href="google.fr" href="">Registration</a></li>
-      </ul>
+      <a class="nav_btn" href="#landing">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#guidance">Guidance</a>
+
+      <a href="#registration">Registration</a>
+
+      <a href="#sec_team">Team</a>
     </nav>
-    <section class="projects">
+
+    <section id="projects">
+      <div class="head__projects">See some previous projects</div>
+
       <div class="ureach__list">
         <div class="card__container">
           <div class="card__container-card">
@@ -126,10 +143,20 @@
       </div>
     </section>
     <!-- </section> -->
-    <section class="guidance">
+    <section id="guidance">
       <div class="head__guidance">
         Retrieve guidance documents for U-REACH projects
       </div>
+      <div class="guidance__manifesto">
+        <a href="U-REACH checklist.docx" download="U-REACH manifesto">
+          <img
+            src="https://cdn.pixabay.com/photo/2021/01/30/12/20/microsoft-word-5963679_1280.png"
+        /></a>
+        <div class="manfesto_title">
+          Download our manifesto describing the U-REACH methods
+        </div>
+      </div>
+
       <div class="guidance__list">
         <div class="ur__guidance">
           <div class="guidance__subtitle">General guidance</div>
@@ -215,35 +242,393 @@
       </div>
     </section>
 
-    <section class="registration">
+    <section id="registration">
       <div class="head__registration">Register your U-REACH project here !</div>
+      <a
+        class="register_btn"
+        href="https://ebiact.shinyapps.io/sendmail/"
+        target="_blank"
+      >
+        Register
+      </a>
+    </section>
 
-      <!-- <div class="formSent">Thank you very much for your message!</div>
-      <div class="formFail">
-        The message could not be sent. <br />
-        Please check that you have filled-in all the fields. If the error
-        persists, send us an email directly!
-      </div> -->
-      <form id="form_id">
-        <div class="form_img">
-          <img
-            src="https://cdn.pixabay.com/photo/2013/07/13/10/17/computer-156948_1280.png"
-          />
-        </div>
-        <div class="form_text">
-          <div class="description">
-            Indicate the name + affiliation of the principal investigator of
-            this U-REACH project
+    <section id="sec_team">
+      <div class="section_title">Project <span>leaders</span></div>
+      <div class="about_leaders">
+        <div class="memb">
+          <img src="photo/photo_gosling-resized.jpg" class="photo" />
+          <div class="memb_name">Corentin J. Gosling, PhD</div>
+          <div class="memb_affil">
+            Université Paris Nanterre
+            <img class="flag" src="img/fr.svg" />
           </div>
-          <input id="lead" type="text" placeholder="" /><br />
-          <div class="description">
-            List the key team members working on the U-REACH project <br />
-            - 100 words max
+          <div class="memb_affil">
+            Université Paris Cité <img class="flag" src="img/fr.svg" />
           </div>
-          <input id="team" type="text" placeholder="" /><br />
-          <button id="btn_request" onclick="SendMail()">Send message</button>
+          <div class="memb_affil">
+            University of Southampton <img class="flag" src="img/gb.svg" />
+          </div>
+          <div class="read_more_icons">
+            <div class="icons">
+              <a href="mailto: corentin.gosling@parisnanterre.fr" class="button"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://github.com/CorentinJGosling"
+                class="button"
+                target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://www.parisnanterre.fr/corentin-gosling--929655.kjsp?RH=1519826463065"
+                target="_blank"
+                ><i class="fas fa-university"></i
+              ></a>
+            </div>
+          </div>
+          <div class="read_more">
+            <button class="readmore_button" id="readmore_buttonCG">
+              <div>Read more</div>
+              <div class="plusIcon" id="plusIconCG">
+                <i class="fas fa-plus"></i>
+              </div>
+            </button>
+            <div class="read_more_text" id="read_more_textCG">
+              Corentin Gosling is an Associate Professor of Neuropsychology at
+              Université Paris Nanterre. He is also a visiting researcher at
+              University of Southampton. One of his research interests focuses
+              on developping new methodological and statistical tools for
+              evidence synthesis.
+            </div>
+          </div>
         </div>
-      </form>
+
+        <div class="memb">
+          <img src="photo/photo_cortese-resized.jpg" class="photo" />
+          <div class="memb_name">Samuele Cortese, MD, PhD</div>
+          <div class="memb_affil">
+            University of Southampton <img class="flag" src="img/gb.svg" />
+          </div>
+          <div class="memb_affil">
+            Solent NHS Trust <img class="flag" src="img/gb.svg" />
+          </div>
+          <div class="memb_affil">
+            New York University <img class="flag" src="img/us.svg" />
+          </div>
+          <div class="read_more_icons">
+            <div class="icons">
+              <a href="mailto: samuelecortese@gmail.com" class="button"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://www.southampton.ac.uk/people/5xf5yj/professor-samuele-cortese"
+                target="_blank"
+                ><i class="fas fa-university"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a href="https://twitter.com/CorteseSamuele" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="read_more">
+            <button class="readmore_button" id="readmore_buttonSC">
+              <div>Read more</div>
+              <div class="plusIcon" id="plusIconSC">
+                <i class="fas fa-plus"></i>
+              </div>
+            </button>
+            <div class="read_more_text" id="read_more_textSC">
+              Samuele Cortese is currently Professor of Child and Adolescent
+              Psychiatry at the University of Southampton and Honorary
+              Consultant Child and Adolescent Psychiatry for Solent NHS Trust.
+              He ranks #1 worldwide in terms of expertise on ADHD and #2 in
+              child psychiatry according to Expertscape.
+            </div>
+          </div>
+        </div>
+
+        <div class="memb">
+          <img src="photo/photo_solmi-resized.jpg" class="photo" />
+          <div class="memb_name">Marco Solmi, MD, PhD</div>
+          <div class="memb_affil">
+            University of Ottawa <img class="flag" src="img/ca.svg" />
+          </div>
+          <div class="memb_affil">
+            Charité University Medicine <img class="flag" src="img/de.svg" />
+          </div>
+          <div class="memb_affil">&nbsp;</div>
+          <div class="read_more_icons">
+            <div class="icons">
+              <a href="mailto: msolmi@toh.ca" class="button"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://med.uottawa.ca/psychiatry/people/solmi-marco"
+                target="_blank"
+                ><i class="fas fa-university"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a href="https://twitter.com/solmi_marco" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="read_more">
+            <button class="readmore_button" id="readmore_buttonMS">
+              <div>Read more</div>
+              <div class="plusIcon" id="plusIconMS">
+                <i class="fas fa-plus"></i>
+              </div>
+            </button>
+            <div class="read_more_text" id="read_more_textMS">
+              Marco Solmi is Associate Professor of Psychiatry at University of
+              Ottawa. His clinical focus is on prevention/early intervention for
+              mental disorders, physical health in mental disorders, and
+              psychopharmacology. He ranks #5 worldwide in terms of expertise in
+              systematic reviews and meta-analysis according to Expertscape.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section_title">Key <span>members</span></div>
+
+      <div class="about_leaders">
+        <!-- <div class="memb">
+          <img src="photo/photo_belen.jpg" class="photo" />
+          <div class="memb_name">Belen Haza, PhD</div>
+          <div class="memb_affil">
+            Université Paris Nanterre <img class="flag" src="img/fr.svg" />
+          </div>
+          <div class="memb_affil">&nbsp;</div>
+          <div class="memb_affil">&nbsp;</div>
+          <div class="read_more_icons">
+            <div class="icons">
+              <a href="mailto: hazabelen@gmail.com" class="button"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://www.parisnanterre.fr/belen-haza-gomez"
+                target="_blank"
+                ><i class="fas fa-university"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://fr.linkedin.com/in/belen-haza-gomez-b44851115"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <div class="read_more">
+            <button class="readmore_button" id="readmore_buttonEV">
+              <div>Read more</div>
+              <div class="plusIcon" id="plusIconEV">
+                <i class="fas fa-plus"></i>
+              </div>
+            </button>
+            <div class="read_more_text" id="read_more_textEV">
+              Belen Haza is a PhD student in Neuropsychology at Paris Nanterre
+              University. Her current research focuses on understanding the
+              specificities of children with ADHD in social cognition.
+              Additionally, she aims at developing a clinical tool for the
+              assessment of their abilities in joint attention.
+            </div>
+          </div>
+        </div>
+
+        <div class="memb">
+          <img src="photo/photo_vieta-resized.jpg" class="photo" />
+          <div class="memb_name">Eduard Vieta, MD, PhD</div>
+          <div class="memb_affil">
+            Hospital Clinic de Barcelona <img class="flag" src="img/es.svg" />
+          </div>
+          <div class="memb_affil">
+            University of Barcelona <img class="flag" src="img/es.svg" />
+          </div>
+          <div class="memb_affil">&nbsp;</div>
+          <div class="read_more_icons">
+            <div class="icons">
+              <a href="mailto: EVIETA@clinic.cat" class="button"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://med.uottawa.ca/psychiatry/people/solmi-marco"
+                target="_blank"
+                ><i class="fas fa-university"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a href="https://twitter.com/solmi_marco" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="read_more">
+            <button class="readmore_button" id="readmore_buttonEV">
+              <div>Read more</div>
+              <div class="plusIcon" id="plusIconEV">
+                <i class="fas fa-plus"></i>
+              </div>
+            </button>
+            <div class="read_more_text" id="read_more_textEV">
+              Eduard Vieta Professor of Psychiatry and Chair at the University
+              of Barcelona and Head of the Department of Psychiatry and
+              Psychology at the Hospital Clinic, where he also leads the Bipolar
+              and Depressive Disorders Program. His unit is one of the worldwide
+              leaders in clinical care, teaching, and research on affective
+              disorders.
+            </div>
+          </div>
+        </div> -->
+
+        <div class="memb">
+          <img src="photo/photo_delorme-resized.jpg" class="photo" />
+          <div class="memb_name">Richard Delorme, MD, PhD</div>
+          <div class="memb_affil">
+            Hopital Robert Debré <img class="flag" src="img/fr.svg" />
+          </div>
+          <div class="memb_affil">
+            Institut Pasteur <img class="flag" src="img/fr.svg" />
+          </div>
+          <div class="memb_affil">&nbsp;</div>
+          <div class="read_more_icons">
+            <div class="icons">
+              <a href="mailto: richard.delorme.rdb@gmail.com " class="button"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://research.pasteur.fr/fr/member/richard-delorme/"
+                target="_blank"
+                ><i class="fas fa-university"></i
+              ></a>
+            </div>
+            <!-- <div class="icons">
+              <a href="https://twitter.com/solmi_marco" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div> -->
+          </div>
+          <div class="read_more">
+            <button class="readmore_button" id="readmore_buttonRD">
+              <div>Read more</div>
+              <div class="plusIcon" id="plusIconRD">
+                <i class="fas fa-plus"></i>
+              </div>
+            </button>
+            <div class="read_more_text" id="read_more_textRD">
+              Richard Delorme is the Head of the Center of Excellence for Autism
+              and Neurodevelopmental Disorders at Robert Debré Hospital in
+              Paris, France. He has participated in the identification of the
+              first genes involved in autism.
+            </div>
+          </div>
+        </div>
+
+        <div class="memb">
+          <img src="photo/fusarpoli_photo-resized.jpg" class="photo" />
+          <div class="memb_name">Paolo Fusar-Poli, MD, PhD</div>
+          <div class="memb_affil">
+            King's College London <img class="flag" src="img/gb.svg" />
+          </div>
+          <div class="memb_affil">
+            University of Pavia <img class="flag" src="img/it.svg" />
+          </div>
+          <div class="memb_affil">&nbsp;</div>
+          <div class="read_more_icons">
+            <div class="icons">
+              <a href="mailto: Paolo.fusar-poli@kcl.ac.uk" class="button"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <div class="icons">
+              <a
+                href="https://www.kcl.ac.uk/people/paolo-fusar-poli"
+                target="_blank"
+                ><i class="fas fa-university"></i
+              ></a>
+            </div>
+            <!-- <div class="icons">
+              <a href="https://twitter.com/paolofusar" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div> -->
+          </div>
+          <div class="read_more">
+            <button class="readmore_button" id="readmore_buttonPFP">
+              <div>Read more</div>
+              <div class="plusIcon" id="plusIconPFP">
+                <i class="fas fa-plus"></i>
+              </div>
+            </button>
+            <div class="read_more_text" id="read_more_textPFP">
+              Paolo Fusar-Poli is a Professor of Preventive Psychiatry at King's
+              College London where he heads the EPIC Lab. He ranked as the
+              number two expert in psychosis in the world in 2019 according to
+              expertscape and he was an external advisory member for the DSM-5
+              and DSM-5TR Psychosis Working Group, US.
+            </div>
+          </div>
+        </div>
+
+        <div class="memb">
+          <img src="photo/photo_quim-resized.jpg" class="photo" />
+          <div class="memb_name">Joaquim Radua, MD, PhD</div>
+          <div class="memb_affil">
+            University of Barcelona<img class="flag" src="img/es.svg" />
+          </div>
+          <div class="memb_affil">
+            King's College London <img class="flag" src="img/gb.svg" />
+          </div>
+          <div class="memb_affil">&nbsp;</div>
+          <div class="read_more_icons">
+            <div class="icons">
+              <a href="mailto: radua@clinic.cat" class="button"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+
+            <div class="icons">
+              <a href="https://www.radua.net/" target="_blank"
+                ><i class="fas fa-university"></i
+              ></a>
+            </div>
+          </div>
+          <div class="read_more">
+            <button class="readmore_button" id="readmore_buttonJF">
+              <div>Read more</div>
+              <div class="plusIcon" id="plusIconJF">
+                <i class="fas fa-plus"></i>
+              </div>
+            </button>
+            <div class="read_more_text" id="read_more_textJF">
+              Joaquim Radua is a psychiatrist medical doctor and statistician
+              interested in improving the treatment of psychiatric disorders. He
+              is the developer of numerous methods for meta-analysis of
+              neuroimaging studies and he has been named as one of the most
+              cited researchers in Psychiatry and Psychology.
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <script src="script/index.js"></script>
