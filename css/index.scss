@@ -47,7 +47,7 @@ body {
 
   background-size: center;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: bottom;
 }
 .stage {
   position: absolute;
@@ -67,6 +67,11 @@ body {
   align-items: center;
   min-height: 500px;
   width: 100%;
+  @media screen and (min-width: 1500px) {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @media screen and (max-width: 900px) {
     flex-direction: column;
     margin-left: 0.5rem;
@@ -521,6 +526,11 @@ nav {
   border-radius: 20px;
   background-color: #011b28;
   color: #fff;
+  @media screen and (min-width: 1500px) {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   @media screen and (max-width: 900px) {
     margin-top: 1rem;
@@ -674,6 +684,11 @@ nav {
     margin-top: 2rem;
   }
   color: #fff;
+  @media screen and (min-width: 1500px) {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .section_title {
     border-top-left-radius: 10px;

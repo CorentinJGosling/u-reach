@@ -39,7 +39,7 @@ body {
   background-image: url(../img/background_export.jpg);
   background-size: center;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: bottom;
 }
 
 .stage {
@@ -60,6 +60,13 @@ body {
   align-items: center;
   min-height: 500px;
   width: 100%;
+}
+@media screen and (min-width: 1500px) {
+  #landing {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media screen and (max-width: 900px) {
   #landing {
@@ -498,6 +505,13 @@ nav .active {
   background-color: #011b28;
   color: #fff;
 }
+@media screen and (min-width: 1500px) {
+  #guidance {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media screen and (max-width: 900px) {
   #guidance {
     margin-top: 1rem;
@@ -641,6 +655,13 @@ nav .active {
 }
 #sec_team h3 {
   margin-top: 2rem;
+}
+@media screen and (min-width: 1500px) {
+  #sec_team {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 #sec_team .section_title {
   border-top-left-radius: 10px;
