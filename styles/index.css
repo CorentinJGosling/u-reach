@@ -186,14 +186,19 @@ nav a {
   color: #fff;
   padding: 0 1rem;
 }
+@media screen and (max-width: 900px) {
+  nav a {
+    border-radius: 0px;
+    line-height: 2rem;
+  }
+}
 nav a:hover {
   background: #00939c;
   border-radius: 30px;
 }
 @media screen and (max-width: 900px) {
-  nav a {
+  nav a:hover {
     border-radius: 0px;
-    line-height: 2rem;
   }
 }
 nav .active {

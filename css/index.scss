@@ -215,14 +215,17 @@ nav {
     text-decoration: none;
     color: $nav-color;
     padding: 0 1rem;
-    &:hover {
-      background: #00939c;
-      border-radius: 30px;
-    }
-
     @media screen and (max-width: 900px) {
       border-radius: 0px;
       line-height: 2rem;
+    }
+
+    &:hover {
+      background: #00939c;
+      border-radius: 30px;
+      @media screen and (max-width: 900px) {
+        border-radius: 0px;
+      }
     }
   }
   .active {
