@@ -280,9 +280,10 @@ nav {
   ----------------------*/
 
 #projects {
-  margin-top: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   @media screen and (max-width: 900px) {
-    margin-top: 1rem;
+    padding-top: 1rem;
   }
   display: grid;
   width: 100%;
@@ -298,8 +299,8 @@ nav {
   //  U-REACH -----------------------
   .ureach__list {
     // border: 2px solid green;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -355,8 +356,8 @@ nav {
   //  Database -----------------------
   .database__list {
     // border: 2px solid blue;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -536,7 +537,6 @@ nav {
 #about {
   padding-top: 1rem;
   padding-bottom: 3rem;
-  margin-top: 5rem;
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 20px;
@@ -666,8 +666,8 @@ nav {
 // </section>
 
 #registration {
-  margin-top: 8rem;
-  margin-bottom: 12rem;
+  padding-top: 8rem;
+  padding-bottom: 12rem;
 
   @media screen and (max-width: 1200px) {
     margin-top: 4rem;
