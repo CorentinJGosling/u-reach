@@ -211,6 +211,10 @@ $nav-background: #011b28;
   ----------------------*/
 
 nav {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
   z-index: 9999;
   width: fit-content;
   color: $nav-color;
@@ -236,6 +240,8 @@ nav {
     width: 100%;
     top: 0px;
     border-radius: 0px;
+    border-left: 0px;
+    border-right: 0px;
     box-shadow: 0px 13px 33px rgba(0, 0, 0, 0.781);
   }
 
