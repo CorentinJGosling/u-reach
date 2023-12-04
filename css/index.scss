@@ -709,20 +709,40 @@ nav {
     margin-bottom: 2rem;
   }
 
-  .register_btn {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    cursor: pointer;
-    &:hover {
-      background-color: #eeeeee;
+  .registration__btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    .register_btn {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      font-weight: bold;
+      max-width: 25ch;
+      text-wrap: balance;
+      margin-left: auto;
+      margin-right: auto;
+
+      cursor: pointer;
+      &:hover {
+        background-color: #eeeeee;
+      }
+      .fas {
+        font-size: 5rem;
+      }
     }
-  }
-  a {
-    color: #000;
-    text-align: center;
-    text-decoration: none;
+    a {
+      color: #000;
+      text-align: center;
+      text-decoration: none;
+    }
   }
 }
 #sec_team {
