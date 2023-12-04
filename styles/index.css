@@ -286,32 +286,35 @@ nav .active {
   flex-direction: column;
   gap: 20px;
 }
-#projects .ureach__list .ureach__right .ureach__proj1,
-#projects .ureach__list .ureach__right .ureach__proj2 {
+#projects .ureach__list .ureach__right .ureach__proj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   border-radius: 20px;
   width: 600px;
   height: 155px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  filter: brightness(80%);
 }
 @media screen and (max-width: 900px) {
-  #projects .ureach__list .ureach__right .ureach__proj1,
-  #projects .ureach__list .ureach__right .ureach__proj2 {
+  #projects .ureach__list .ureach__right .ureach__proj {
     width: 90vw;
   }
 }
-#projects .ureach__list .ureach__right .ureach__proj1:hover,
-#projects .ureach__list .ureach__right .ureach__proj2:hover {
-  filter: brightness(100%);
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_title {
+  font-size: 1rem;
+  font-weight: bold;
 }
-#projects .ureach__list .ureach__right .ureach__proj1 {
-  background-image: url("../img/ebiact.jpg");
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a {
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #00939c;
+  color: #fff;
 }
-#projects .ureach__list .ureach__right .ureach__proj2 {
-  background-image: url("../img/ebibd.jpg");
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a:hover {
+  opacity: 0.8;
 }
 #projects .database__list {
   margin-top: 4rem;
@@ -496,39 +499,52 @@ nav .active {
   transition: all 0.3s ease;
 }
 
-#guidance {
+#about {
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   margin-top: 5rem;
-  margin: 1rem 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   border-radius: 20px;
   background-color: #011b28;
   color: #fff;
 }
 @media screen and (min-width: 1500px) {
-  #guidance {
+  #about {
     max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 @media screen and (max-width: 900px) {
-  #guidance {
+  #about {
     margin-top: 1rem;
   }
 }
-#guidance .head__guidance {
+#about .body_guidance {
+  text-align: center;
+  font-style: italic;
+  max-width: 70ch;
+  font-size: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  text-wrap: balance;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+}
+#about .head__guidance {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
   margin-top: 2rem;
 }
-#guidance .guidance__manifesto {
+#about .guidance__manifesto {
   display: grid;
   align-items: center;
   justify-content: center;
 }
-#guidance .guidance__manifesto .manfesto_title {
+#about .guidance__manifesto .manfesto_title {
   color: #fff;
   font-size: 1rem;
   text-align: center;
@@ -537,16 +553,16 @@ nav .active {
   text-wrap: balance;
   margin-bottom: 2rem;
 }
-#guidance .guidance__manifesto a {
+#about .guidance__manifesto a {
   margin-top: 2rem;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
-#guidance .guidance__manifesto a:hover {
+#about .guidance__manifesto a:hover {
   opacity: 0.7;
 }
-#guidance .guidance__manifesto a img {
+#about .guidance__manifesto a img {
   margin-top: 1rem;
   text-align: center;
   width: 150px;
@@ -554,7 +570,7 @@ nav .active {
   margin-right: auto;
   margin-bottom: 0.5rem;
 }
-#guidance .guidance__list {
+#about .guidance__list {
   border-top: 2px solid #fff;
   padding-top: 3rem;
   display: grid;
@@ -566,34 +582,34 @@ nav .active {
   gap: 1rem;
 }
 @media screen and (max-width: 1600px) {
-  #guidance .guidance__list {
+  #about .guidance__list {
     max-width: 80vw;
   }
 }
 @media screen and (max-width: 1400px) {
-  #guidance .guidance__list {
+  #about .guidance__list {
     max-width: 90vw;
   }
 }
 @media screen and (max-width: 1200px) {
-  #guidance .guidance__list {
+  #about .guidance__list {
     grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (max-width: 768px) {
-  #guidance .guidance__list {
+  #about .guidance__list {
     grid-template-columns: 1fr;
   }
 }
-#guidance .guidance__subtitle {
+#about .guidance__subtitle {
   font-weight: bold;
   padding-bottom: 1rem;
 }
-#guidance .guidance__items {
+#about .guidance__items {
   display: grid;
   gap: 1rem;
 }
-#guidance .guidance__items a {
+#about .guidance__items a {
   padding: 1rem;
   color: #fff;
   text-decoration: none;
@@ -604,7 +620,7 @@ nav .active {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-#guidance .guidance__items a:hover {
+#about .guidance__items a:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 

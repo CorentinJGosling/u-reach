@@ -309,30 +309,39 @@ nav {
       flex-direction: column;
       gap: 20px;
 
-      .ureach__proj1,
-      .ureach__proj2 {
+      .ureach__proj {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
         border-radius: 20px;
         width: calc($card-width * 3);
         // min-width: 100px;
         height: 155px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        filter: brightness(80%);
         @media screen and (max-width: 900px) {
           width: 90vw;
         }
 
-        &:hover {
-          filter: brightness(100%);
+        .ureach__proj_title {
+          font-size: 1rem;
+          font-weight: bold;
         }
-      }
-      .ureach__proj1 {
-        background-image: url("../img/ebiact.jpg");
-      }
-      .ureach__proj2 {
-        background-image: url("../img/ebibd.jpg");
+        .ureach__proj_buttons {
+          a {
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 20px;
+            background-color: #00939c;
+            color: #fff;
+            &:hover {
+              // filter: brightness(80%);
+              opacity: 0.8;
+            }
+          }
+        }
       }
     }
   }
@@ -518,11 +527,12 @@ nav {
   }
 }
 
-#guidance {
+#about {
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   margin-top: 5rem;
-  margin: 1rem 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   border-radius: 20px;
   background-color: #011b28;
   color: #fff;
@@ -534,6 +544,19 @@ nav {
 
   @media screen and (max-width: 900px) {
     margin-top: 1rem;
+  }
+
+  .body_guidance {
+    text-align: center;
+    font-style: italic;
+    max-width: 70ch;
+    font-size: 1.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    text-wrap: balance;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
   }
 
   .head__guidance {

@@ -60,12 +60,12 @@ const plusIconSC = document.getElementById("plusIconSC");
 // const readMoreButtonJF = document.getElementById("readmore_buttonJF");
 // const readMoreContentJF = document.getElementById("read_more_textJF");
 // const plusIconJF = document.getElementById("plusIconJF");
-const readMoreButtonRD = document.getElementById("readmore_buttonRD");
-const readMoreContentRD = document.getElementById("read_more_textRD");
-const plusIconRD = document.getElementById("plusIconRD");
-const readMoreButtonPFP = document.getElementById("readmore_buttonPFP");
-const readMoreContentPFP = document.getElementById("read_more_textPFP");
-const plusIconPFP = document.getElementById("plusIconPFP");
+// const readMoreButtonRD = document.getElementById("readmore_buttonRD");
+// const readMoreContentRD = document.getElementById("read_more_textRD");
+// const plusIconRD = document.getElementById("plusIconRD");
+// const readMoreButtonPFP = document.getElementById("readmore_buttonPFP");
+// const readMoreContentPFP = document.getElementById("read_more_textPFP");
+// const plusIconPFP = document.getElementById("plusIconPFP");
 // const readMoreButtonEV = document.getElementById("readmore_buttonEV");
 // const readMoreContentEV = document.getElementById("read_more_textEV");
 // const plusIconEV = document.getElementById("plusIconEV");
@@ -97,24 +97,24 @@ readMoreButtonSC.addEventListener("click", function () {
 //   readMoreContentJF.classList.toggle("add_border");
 //   plusIconJF.classList.toggle("rotate-45");
 // });
-readMoreButtonRD.addEventListener("click", function () {
-  readMoreButtonRD.classList.toggle("rmv_border");
-  readMoreContentRD.classList.toggle("show-read-more");
-  readMoreContentRD.classList.toggle("add_border");
-  plusIconRD.classList.toggle("rotate-45");
-});
+// readMoreButtonRD.addEventListener("click", function () {
+//   readMoreButtonRD.classList.toggle("rmv_border");
+//   readMoreContentRD.classList.toggle("show-read-more");
+//   readMoreContentRD.classList.toggle("add_border");
+//   plusIconRD.classList.toggle("rotate-45");
+// });
 // readMoreButtonEV.addEventListener("click", function () {
 //   readMoreButtonEV.classList.toggle("rmv_border");
 //   readMoreContentEV.classList.toggle("show-read-more");
 //   readMoreContentEV.classList.toggle("add_border");
 //   plusIconEV.classList.toggle("rotate-45");
 // });
-readMoreButtonPFP.addEventListener("click", function () {
-  readMoreButtonPFP.classList.toggle("rmv_border");
-  readMoreContentPFP.classList.toggle("show-read-more");
-  readMoreContentPFP.classList.toggle("add_border");
-  plusIconPFP.classList.toggle("rotate-45");
-});
+// readMoreButtonPFP.addEventListener("click", function () {
+//   readMoreButtonPFP.classList.toggle("rmv_border");
+//   readMoreContentPFP.classList.toggle("show-read-more");
+//   readMoreContentPFP.classList.toggle("add_border");
+//   plusIconPFP.classList.toggle("rotate-45");
+// });
 var NUM_PARTICLES = 300,
   MAX_SPEED = 0.00001,
   particles = [],

@@ -45,7 +45,9 @@ ui <- fluidPage(
       textInput("pwd", "Password"),
       actionButton("log", "Login")
       ),
-  formUI(basicInfoForm)
+  div(id="form",
+      formUI(basicInfoForm)
+  )
 )
 
 server <- function(input, output, session) {
@@ -53,6 +55,8 @@ server <- function(input, output, session) {
     enable_login <- isTRUE(input$btnLogin)
     toggleClass(selector = "#admin", class="hide",
                 condition = !enable_login)
+    toggleClass(selector = "#form", class="hide",
+                condition = enable_login)
 
   })
 

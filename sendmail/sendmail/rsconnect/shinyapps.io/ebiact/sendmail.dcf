@@ -5,7 +5,7 @@ account: ebiact
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10703338
-bundleId: 8001797
+bundleId: 8001978
 url: https://ebiact.shinyapps.io/sendmail/
 version: 1
 asMultiple: FALSE
