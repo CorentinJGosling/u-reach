@@ -195,7 +195,6 @@ nav {
   top: 10px;
   position: sticky;
   position: -webkit-sticky;
-  margin-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
@@ -256,8 +255,7 @@ nav .active {
   $MISC
   ----------------------*/
 #projects {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 4rem;
   display: grid;
   width: 100%;
   align-items: center;
@@ -268,7 +266,20 @@ nav .active {
     padding-top: 1rem;
   }
 }
+#projects .logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+#projects .logos a:hover {
+  opacity: 0.5;
+}
+#projects .logos .logo img {
+  width: 200px;
+}
 #projects .head__projects {
+  padding-top: 4rem;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -312,6 +323,7 @@ nav .active {
 #projects .ureach__list .ureach__right .ureach__proj .ureach__proj_title {
   font-size: 1rem;
   font-weight: bold;
+  text-align: center;
 }
 #projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a {
   text-decoration: none;
@@ -512,6 +524,7 @@ nav .active {
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 20px;
+  margin-top: 4rem;
   background-color: #011b28;
   color: #fff;
 }
@@ -538,6 +551,12 @@ nav .active {
   text-wrap: balance;
   border-left: 10px solid #fff;
   border-right: 10px solid #fff;
+}
+@media screen and (max-width: 900px) {
+  #about .body_guidance {
+    border-left: 0px;
+    border-right: 0px;
+  }
 }
 #about .head__guidance {
   font-size: 2rem;
@@ -716,8 +735,6 @@ nav .active {
 }
 @media screen and (max-width: 1200px) {
   .about_leaders {
-    margin-right: 1rem;
-    margin-left: 1rem;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
   }
@@ -845,19 +862,23 @@ nav .active {
 }
 
 .add_border {
-  border-bottom: 1px solid #000 !important;
+  border-bottom: 0px solid #fff !important;
 }
 
 .rmv_border {
-  border-bottom: 1px solid #000 !important;
+  border-bottom: 0px solid #fff !important;
 }
 
 .read_more_text {
   display: flex;
+  flex-direction: column;
   align-items: baseline !important;
   justify-content: baseline !important;
   top: 0 !important;
   height: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #read_more_textMS,
