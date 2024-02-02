@@ -283,6 +283,13 @@ nav .active {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
+  text-wrap: balance;
+}
+#projects .pres_other_projects {
+  max-width: 1200px;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 #projects .ureach__list {
   padding-top: 2rem;
@@ -704,6 +711,10 @@ nav .active {
   text-align: center;
   text-decoration: none;
 }
+#registration .tuto {
+  margin-top: 4rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 #sec_team {
   padding-left: 1rem;
@@ -949,4 +960,114 @@ h3 {
   margin-right: 3rem;
   font-weight: bold;
   border-bottom: 2px solid #fff;
+}
+
+.wrap {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding: 0 60px;
+}
+
+.wrap:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slider {
+  position: relative;
+  z-index: 200;
+  padding: 0 0px;
+  margin: 1rem auto;
+  max-width: 800px;
+  width: 100%;
+}
+.slider a {
+  transition: all 500ms ease-out;
+}
+.slider a:hover {
+  filter: brightness(0.8);
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: -25px;
+  border: none;
+  background: transparent;
+  color: #000;
+  font-family: monospace;
+  font-size: 5rem;
+  z-index: 300;
+  outline: none;
+  cursor: pointer;
+}
+.slick-arrow:hover {
+  color: #00939c;
+}
+
+.slick-prev {
+  left: -50px;
+  text-align: left;
+}
+
+.slick-next {
+  right: -50px;
+  text-align: right;
+}
+
+.item.slick-slide {
+  width: 400px;
+  height: 400px !important;
+  transition: transform 0.4s;
+  position: relative;
+}
+
+.slick-slide:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s;
+}
+
+.item.slick-slide {
+  transform: scale(0.7) translate(640px);
+}
+
+.item.slick-slide.slick-center + .slick-slide {
+  transform: scale(0.8) translate(-250px);
+  z-index: 10;
+}
+
+.item.slick-slide.slick-center + .slick-slide + .item.slick-slide {
+  transform: scale(0.7) translate(-640px);
+  z-index: 5;
+}
+
+.item.slick-slide.slick-active {
+  transform: scale(0.8) translate(250px);
+}
+
+.item.slick-slide.slick-center {
+  /* margin: 0 -10%; */
+  transform: scale(1);
+  z-index: 30;
+}
+
+.slick-center:after {
+  opacity: 0;
 }/*# sourceMappingURL=index.css.map */
