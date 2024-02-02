@@ -59,7 +59,6 @@ body {
   background-color: #03030d;
   align-items: center;
   min-height: 500px;
-  width: 100%;
 }
 @media screen and (min-width: 1500px) {
   #landing {
@@ -296,21 +295,18 @@ nav .active {
 #projects .ureach__list {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  display: flex;
   margin-left: auto;
   margin-right: auto;
-  align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-}
-@media screen and (max-width: 900px) {
-  #projects .ureach__list {
-    flex-direction: column;
-  }
 }
 #projects .ureach__list .ureach__right {
   display: flex;
   gap: 2rem;
+}
+@media screen and (max-width: 900px) {
+  #projects .ureach__list .ureach__right {
+    flex-direction: column;
+  }
 }
 #projects .ureach__list .ureach__right .ureach__proj {
   display: grid;
@@ -578,6 +574,7 @@ nav .active {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   text-wrap: balance;
   border-left: 10px solid #fff;
   border-right: 10px solid #fff;
@@ -734,9 +731,14 @@ nav .active {
   text-align: center;
   text-decoration: none;
 }
-#registration .tuto {
-  margin-top: 4rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+#registration .tuto img {
+  margin-top: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+@media screen and (max-width: 768px) {
+  #registration .tuto img {
+    width: 100% !important;
+  }
 }
 
 #sec_team {
@@ -1010,6 +1012,12 @@ h3 {
   margin: 1rem auto;
   max-width: 800px;
   width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .slider {
+    max-width: auto;
+    width: 400px;
+  }
 }
 .slider a {
   transition: all 500ms ease-out;
