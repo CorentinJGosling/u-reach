@@ -318,6 +318,8 @@ nav {
     margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    text-wrap: balance;
   }
   //  U-REACH -----------------------
   .ureach__list {
@@ -336,39 +338,61 @@ nav {
 
     .ureach__right {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      // flex-direction: column;
+      gap: 2rem;
 
       .ureach__proj {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         align-items: center;
+        text-align: center;
         justify-content: center;
-        gap: 1.5rem;
-
-        border-radius: 20px;
-        width: calc($card-width * 3);
-        // min-width: 100px;
-        height: 155px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        @media screen and (max-width: 900px) {
-          width: 90vw;
+        padding-bottom: 2rem;
+        .ureach__proj__img {
+          display: grid;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          border-bottom: 5px solid #d3d3d3;
+        }
+        .ureach__proj__img img {
+          // padding-bottom: 0.25rem;
+          width: 350px;
         }
 
-        .ureach__proj_title {
-          font-size: 1rem;
+        .ureach__proj_title:nth-child(1) {
           font-weight: bold;
-          text-align: center;
+          margin-top: 0.5rem;
+          margin-bottom: 0.25rem;
         }
+
+        .ureach__proj__body {
+          display: grid;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          max-width: 350px;
+        }
+
         .ureach__proj_buttons {
+          margin-top: 2rem;
           a {
+            border: 1px solid #000;
             text-decoration: none;
-            padding: 1rem;
-            border-radius: 20px;
+            padding: 0.75rem;
+          }
+          a:nth-child(1) {
             background-color: #00939c;
             color: #fff;
             &:hover {
-              // filter: brightness(80%);
+              opacity: 0.8;
+            }
+          }
+          a:nth-child(2) {
+            background-color: #fff;
+            color: #000;
+            &:hover {
+              background-color: #45b1b7;
               opacity: 0.8;
             }
           }

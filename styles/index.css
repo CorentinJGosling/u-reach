@@ -290,6 +290,8 @@ nav .active {
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  text-wrap: balance;
 }
 #projects .ureach__list {
   padding-top: 2rem;
@@ -308,38 +310,59 @@ nav .active {
 }
 #projects .ureach__list .ureach__right {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
 }
 #projects .ureach__list .ureach__right .ureach__proj {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  border-radius: 20px;
-  width: 600px;
-  height: 155px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-@media screen and (max-width: 900px) {
-  #projects .ureach__list .ureach__right .ureach__proj {
-    width: 90vw;
-  }
-}
-#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_title {
-  font-size: 1rem;
-  font-weight: bold;
   text-align: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-bottom: 2rem;
+}
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj__img {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-bottom: 5px solid #d3d3d3;
+}
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj__img img {
+  width: 350px;
+}
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_title:nth-child(1) {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj__body {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  max-width: 350px;
+}
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons {
+  margin-top: 2rem;
 }
 #projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a {
+  border: 1px solid #000;
   text-decoration: none;
-  padding: 1rem;
-  border-radius: 20px;
+  padding: 0.75rem;
+}
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a:nth-child(1) {
   background-color: #00939c;
   color: #fff;
 }
-#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a:hover {
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a:nth-child(1):hover {
+  opacity: 0.8;
+}
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a:nth-child(2) {
+  background-color: #fff;
+  color: #000;
+}
+#projects .ureach__list .ureach__right .ureach__proj .ureach__proj_buttons a:nth-child(2):hover {
+  background-color: #45b1b7;
   opacity: 0.8;
 }
 #projects .database__list {
