@@ -65,8 +65,19 @@ body {
   list-style-type: none;
   gap: 2rem;
 }
+@media screen and (max-width: 900px) {
+  .main-header nav .nav-links {
+    margin-right: 0.1rem;
+    gap: 0.5rem;
+  }
+}
 .main-header nav .nav-links li {
   margin-right: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .main-header nav .nav-links li {
+    margin-right: 0.3rem;
+  }
 }
 .main-header nav .nav-links li a {
   text-decoration: none;
@@ -164,6 +175,17 @@ body {
 .hero #container_right .logos img:hover {
   filter: grayscale(0%);
   opacity: 1;
+}
+.hero #svgContainer svg {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+@media screen and (max-width: 600px) {
+  .hero #svgContainer svg {
+    max-width: 90vw;
+  }
 }
 .hero .feature-grid {
   display: flex;
@@ -355,12 +377,25 @@ body {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+@media screen and (max-width: 900px) {
+  .register {
+    flex-direction: column;
+  }
+}
 .register .register_img {
   max-width: 500px;
   padding: 1rem;
 }
 .register .register_txt {
   padding: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .register .register_txt {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 .register .register_txt h2 {
   color: #ffffff;
@@ -520,24 +555,4 @@ body {
   text-align: center;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 768px) {
-  .main-header nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .main-header nav .nav-links,
-  .main-header nav .auth-buttons {
-    margin-top: 20px;
-  }
-  .hero h1 {
-    font-size: 28px;
-  }
-  .hero p {
-    font-size: 16px;
-  }
-  .register .register-buttons {
-    flex-direction: column;
-  }
 }/*# sourceMappingURL=index.css.map */
