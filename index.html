@@ -3,388 +3,290 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>U-REACH</title>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
+    <title>
+      U-REACH: Umbrella-Review, Evaluation, Analysis and Communication Hub
+    </title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/index.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,700"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link
-      rel="icon"
-      href="https://cdn.pixabay.com/photo/2013/07/12/18/05/system-152938_1280.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
-      type="text/javascript"
-    ></script>
   </head>
   <body>
-    <section id="landing">
-      <canvas class="stage stage--particles js-canvas-particles"></canvas>
-
-      <div class="landing__desc">
-        <div class="desc__subtitle">
-          A communication method about healthcare
+    <header class="main-header">
+      <nav class="container">
+        <div class="logo">
+          <img src="img/logo.jpg" / alt = "logo ureach"> U-REACH
         </div>
-        <div class="desc__title">
-          U-REACH: Umbrella-Review, Evaluation, Analysis and Communication Hub
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+        <!-- <div class="auth-buttons">
+          <a href="#login" class="btn btn-secondary">Login</a>
+          <a href="#register" class="btn btn-primary">Register Now</a>
+        </div> -->
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="container">
+          <h1>
+            You want to make the bridge between scientific evidence and the real
+            world?
+          </h1>
+          <p>
+            That's what U-REACH is about: a flexible methodology to share
+            scientific digital data about health
+          </p>
+          <div class="feature-grid">
+            <!-- <img
+              id="img_bg"
+              src="img/background_main_img.svg"
+              alt="Background Img"
+            /> -->
+            <div id="svgContainer"></div>
+            <div id="tooltipContainer" class="tooltip"></div>
+          </div>
         </div>
-        <div class="desc__butons">
-          <a href="#projects" class="desc_button">
-            Ongoing U-REACH&nbsp;
-            <i class="fas fa-search"></i>
-          </a>
-          <a href="https://osf.io/q39gx/" target="_blank" class="desc_button">
-            Register U-REACH &nbsp; <i class="far fa-save"></i>
-          </a>
+      </section>
+
+      <section id="logos" class="logos">
+        <div class="container">
+          <img src="img/logo_dysco.png" alt="DYSCO Logo" />
+          <img src="img/sciences_lab.svg" alt="Sciences Lab Logo" />
         </div>
-      </div>
-      <div class="landing__img">
-        <img src="img/background.jpg" />
-      </div>
-    </section>
-    <nav id="navbar">
-      <a class="nav_btn" href="#landing">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
+      </section>
 
-      <a href="#registration">Registration</a>
-
-      <a href="#sec_team">Team</a>
-    </nav>
-
-    <section id="projects">
-      <div class="logos">
-        <a
-          href="https://dysco.parisnanterre.fr/accueil/welcome-to-dysco"
-          target="_blank_"
-          class="logo"
-          ><img src="img/logo_dysco.png"
-        /></a>
-        <a href="https://www.solmilab.com/" target="_blank_" class="logo"
-          ><img src="img/sciences_lab.svg"
-        /></a>
-      </div>
-      <div class="head__projects">See some ongoing U-REACH projects</div>
-
-      <div class="ureach__list">
-        <div class="ureach__right">
-          <div class="ureach__proj">
-            <div class="ureach__proj__img">
-              <img src="photo/ebiact.jpg" alt="" />
+      <section id="projects" class="projects">
+        <div class="subtitle">Our projects</div>
+        <div class="container">
+          <h2>See some ongoing U-REACH projects</h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <img src="img/ebiact.jpg" alt="EBIA-CT Project" />
+              <div class="project-info">
+                <h3>EBIA-CT</h3>
+                <p>Interventions for autism</p>
+                <div class="project-buttons">
+                  <a href="https://ebiact-database.com" class="btn btn-primary"
+                    >View Platform</a
+                  >
+                  <a href="#" class="btn btn-secondary">View Code</a>
+                </div>
+              </div>
             </div>
-            <div class="ureach__proj__body">
-              <div class="ureach__proj_title">EBIA-CT</div>
-              <div class="ureach__proj_title">Interventions for autism</div>
+            <div class="project-card">
+              <img src="img/ebibd.jpg" alt="EBI-BD Project" />
+              <div class="project-info">
+                <h3>EBI-BD</h3>
+                <p>Interventions for bipolar disorder</p>
+                <div class="project-buttons">
+                  <a href="https://ebibd-database.org" class="btn btn-primary"
+                    >View Platform</a
+                  >
+                  <a href="#" class="btn btn-secondary">View Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div class="ureach__proj_buttons">
+      <section id="other-platforms" class="other-platforms">
+        <div class="subtitle">What others did</div>
+        <div class="container">
+          <h2>Other online evidence synthesis platforms</h2>
+          <p>
+            These projects are not U-REACH projects but they used online
+            platforms to disseminate their results. They are presented to
+            provide an overview of the different approaches and information
+            contained in existing platforms.
+          </p>
+          <div class="platform-slider">
+            <div class="platform-card">
+              <a href="https://www.metapsy.org/">
+                <img src="img/metapsy.jpg" alt="Platform 1" />
+                <h3>MetaPSY</h3>
+                <p>Exhaustive synthesis of different psychotherapies.</p>
+              </a>
+            </div>
+            <div class="platform-card">
+              <a href="http://www.metapreg.org/default.aspx">
+                <img src="img/covidnma.jpg" alt="Platform 2" />
+                <h3>MetaPreg</h3>
+                <p>Evidence synthesis about medicines during pregnancy.</p>
+              </a>
+            </div>
+            <div class="platform-card">
+              <a href="https://covid-nma.com/">
+                <img src="img/metapreg.jpg" alt="Platform 3" />
+                <h3>COVID-nma</h3>
+                <p>
+                  A living mapping and living systematic review of Covid-19
+                  trials.
+                </p>
+              </a>
+            </div>
+            <div class="platform-card">
+              <a href="https://www.psymatik.com/">
+                <img src="img/psymatik.jpg" alt="Platform 4" />
+                <h3>Psymatik</h3>
+                <p>Medication ranking based on users preference.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="subtitle">Where to start</div>
+        <div class="container">
+          <h2>U-REACH method</h2>
+          <blockquote>
+            "The U-REACH method aims to fill the existing gap from scientific
+            publications to clinical care of persons suffering from mental or
+            physical disorders, by combining a broad rigorous systematic
+            evidence synthesis and an interactive presentation of these results
+            in a format that can be used by diverse key stakeholders"
+          </blockquote>
+          <a href="#" class="btn btn-primary">
+            <i class="fa-solid fa-download"></i> &nbsp; Download our manifesto
+            describing the U-REACH methods
+          </a>
+        </div>
+        <div class="register">
+          <div class="register_img">
+            <img
+              src="img/osf_ureach.png"
+              alt="Registration Tutorial"
+              class="tutorial-image"
+            />
+          </div>
+          <div class="register_txt">
+            <h2>Register your U-REACH project here!</h2>
+            <p>
+              You can download the protocol checklist (directly inspired by the
+              PROSPERO guidelines and our own experience), and register your
+              U-REACH project immediately in our dedicated OSF folder!
+            </p>
+            <div class="register-buttons">
+              <a href="#" class="btn btn-secondary">
+                <i class="fa-solid fa-download"></i> &nbsp; Read checklist
+              </a>
+              <a href="#" class="btn btn-primary">
+                <i class="fa-solid fa-download"></i> &nbsp; Register now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="team">
+        <div class="subtitle">Our team</div>
+        <div class="container">
+          <h2>Project Leaders</h2>
+          <div class="team-grid">
+            <div class="team-card">
+              <img
+                src="img/photo_gosling-resized.jpg"
+                alt="Corentin J. Gosling"
+              />
+              <div class="social-links">
+                <a href="https://github.com/CorentinJGosling"
+                  ><i class="fa-solid fa-building-columns"></i
+                ></a>
+                <a href="https://www.parisnanterre.fr/corentin-gosling"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+              <h3>Corentin J. Gosling, PhD</h3>
+              <p>Université Paris Nanterre, FR</p>
+              <p>Hôpital Robert Debré, FR</p>
+              <p>University of Southampton, UK</p>
+            </div>
+            <div class="team-card">
+              <img src="img/photo_cortese-resized.jpg" alt="Samuele Cortese" />
+              <div class="social-links">
                 <a
-                  target="_blank"
-                  href="https://ebiact-database.com"
-                  class="ureach__proj1"
-                  >View platform</a
-                >
+                  href="https://www.southampton.ac.uk/people/5xf5yj/professor-samuele-cortese"
+                  ><i class="fa-solid fa-building-columns"></i
+                ></a>
+                <a href="https://x.com/CorteseSamuele"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+              </div>
+              <h3>Samuele Cortese, MD, PhD</h3>
+              <p>University of Southampton, UK</p>
+              <p>New York University, USA</p>
+              <p>University of Bari, Italy</p>
+            </div>
+            <div class="team-card">
+              <img src="img/photo_delorme-resized.jpg" alt="Marco Solmi" />
+              <div class="social-links">
+                <a href="https://research.pasteur.fr/fr/member/richard-delorme/"
+                  ><i class="fa-solid fa-building-columns"></i
+                ></a>
                 <a
-                  target="_blank"
-                  href="https://github.com/CorentinJGosling/ebiact_website"
-                  class="ureach__proj1"
-                  >View code</a
-                >
+                  href="https://www.linkedin.com/in/richard-delorme-5b287688/?originalSubdomain=fr"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
               </div>
+              <h3>Richard Delorme, MD, PhD</h3>
+              <p>Hôpital Robert Debré, FR</p>
+              <p>Institut Pasteur, FR</p>
+              <p>&nbsp;</p>
             </div>
-          </div>
-          <div class="ureach__proj">
-            <div class="ureach__proj__img">
-              <img src="photo/ebibd.jpg" alt="" />
-            </div>
-            <div class="ureach__proj__body">
-              <div class="ureach__proj_title">EBI-BD</div>
-              <div class="ureach__proj_title">
-                Interventions for bipolar disorder
+            <div class="team-card">
+              <img src="img/photo_solmi-resized.jpg" alt="Marco Solmi" />
+              <div class="social-links">
+                <a href="https://www.solmilab.com/"
+                  ><i class="fa-solid fa-building-columns"></i
+                ></a>
+                <a href="https://x.com/solmi_marco"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
               </div>
-
-              <div class="ureach__proj_buttons">
-                <a
-                  target="_blank"
-                  href="https://ebibd-database.org/"
-                  class="ureach__proj1"
-                  >View platform</a
-                >
-                <a
-                  target="_blank"
-                  href="https://github.com/CorentinJGosling/ebibd-database"
-                  class="ureach__proj1"
-                  >View code</a
-                >
-              </div>
+              <h3>Marco Solmi, MD, PhD</h3>
+              <p>University of Ottawa, CA</p>
+              <p>Charité Universitätsmedizin, GR</p>
+              <p>&nbsp;</p>
             </div>
           </div>
         </div>
-      </div>
-      <div class="head__projects">
-        Other online evidence synthesis platforms
-      </div>
-      <div class="pres_other_projects">
-        These projects are not U-REACH projects but they used online platforms
-        to disseminate their results. They are presented to provide an overview
-        of the different approaches and information contained in existing
-        platforms.
-      </div>
-      <div class="pres_other_projects">
-        If you have built a platform that you would like to be registered here,
-        do not hesitate to contact us!
-      </div>
-      <div class="wrap">
-        <div class="slider">
-          <a href="https://www.metapsy.org/" target="_blank" class="item">
-            <img src="photo/metapsy.jpg" alt="" />
-          </a>
-          <a
-            class="item"
-            href="http://www.metapreg.org/default.aspx"
-            target="_blank"
-          >
-            <img src="photo/metapreg.jpg" alt="" />
-          </a>
-          <!-- <a
-            class="item"
-            href="https://esm.ispm.unibe.ch/shinies/cNMA_iCBT/"
-            target="_blank"
-          >
-            <img src="photo/toshi.jpg" alt="" />
-          </a> -->
-          <a class="item" href="https://covid-nma.com/" target="_blank">
-            <img src="photo/covidnma.jpg" alt="" />
-          </a>
-          <a class="item" href="https://www.psymatik.com/" target="_blank">
-            <img src="photo/psymatik.jpg" alt="" />
-          </a>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <!-- <div class="footer-grid">
+          <div class="footer-column">
+            <h3>U-REACH</h3>
+            <p>Umbrella-Review, Evaluation, Analysis and Communication Hub</p>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#projects">Our Projects</a></li>
+              <li><a href="#register">Register Project</a></li>
+            </ul>
+          </div>
+          <div class="footer-column"></div>
+        </div> -->
+        <div class="footer-bottom">
+          <p>&copy; 2024 U-REACH. All rights reserved.</p>
+          <p>corentin.gosling@gmail.com</p>
         </div>
       </div>
-    </section>
-
-    <!-- </section> -->
-    <section id="about">
-      <div class="head__guidance">About the U-REACH method</div>
-      <div class="body_guidance">
-        "The U-REACH method aims to fill the existing gap from scientific
-        publications to clinical care of persons suffering from mental or
-        physical disorders, by combining a broad rigorous systematic evidence
-        synthesis and an interactive presentation of these results in a format
-        that can be used by diverse key stakeholders"
-      </div>
-      <div class="guidance__manifesto">
-        <a href="U-REACH checklist.docx" download="U-REACH manifesto">
-          <img
-            src="https://cdn.pixabay.com/photo/2021/01/30/12/20/microsoft-word-5963679_1280.png"
-        /></a>
-        <div class="manfesto_title">
-          Download our manifesto describing the U-REACH methods
-        </div>
-      </div>
-    </section>
-
-    <section id="registration">
-      <div class="head__registration">Register your U-REACH project here !</div>
-      <div class="registration__btns">
-        <a
-          class="register_btn"
-          href="U-REACH checklist.pdf"
-          download="U-REACH checklist"
-        >
-          <div>Start by download the checklist</div>
-          <div><i class="fas fa-file-download"></i></div>
-        </a>
-
-        <a class="register_btn" href="https://osf.io/q39gx/" target="_blank">
-          <div>Register the answers to this checkist</div>
-          <div><i class="fas fa-save"></i></div>
-        </a>
-      </div>
-      <div class="tuto"><img class="tuto_img" src="/img/osf_ureach.png" /></div>
-    </section>
-
-    <section id="sec_team">
-      <div class="section_title">Project <span>leaders</span></div>
-      <div class="about_leaders">
-        <div class="memb">
-          <img src="photo/photo_gosling-resized.jpg" class="photo" />
-          <div class="memb_name">Corentin J. Gosling, PhD</div>
-          <div class="memb_affil">
-            Université Paris Nanterre
-            <img class="flag" src="img/fr.svg" />
-          </div>
-          <div class="memb_affil">
-            Université Paris Cité <img class="flag" src="img/fr.svg" />
-          </div>
-          <div class="memb_affil">
-            University of Southampton <img class="flag" src="img/gb.svg" />
-          </div>
-          <div class="memb_affil">&nbsp;</div>
-
-          <div class="read_more_icons">
-            <div class="icons">
-              <a href="mailto: corentin.gosling@parisnanterre.fr" class="button"
-                ><i class="fas fa-envelope"></i
-              ></a>
-            </div>
-            <div class="icons">
-              <a
-                href="https://github.com/CorentinJGosling"
-                class="button"
-                target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-            <div class="icons">
-              <a
-                href="https://www.parisnanterre.fr/corentin-gosling--929655.kjsp?RH=1519826463065"
-                target="_blank"
-                ><i class="fas fa-university"></i
-              ></a>
-            </div>
-          </div>
-          <div class="read_more">
-            <button class="readmore_button" id="readmore_buttonCG">
-              <div>Read more</div>
-              <div class="plusIcon" id="plusIconCG">
-                <i class="fas fa-plus"></i>
-              </div>
-            </button>
-            <div class="read_more_text" id="read_more_textCG">
-              Corentin Gosling is an Associate Professor of Neuropsychology at
-              Université Paris Nanterre. He is also a visiting researcher at
-              University of Southampton. One of his research interests focuses
-              on developping new methodological and statistical tools for
-              evidence synthesis.
-            </div>
-          </div>
-        </div>
-
-        <div class="memb">
-          <img src="photo/photo_cortese-resized.jpg" class="photo" />
-          <div class="memb_name">Samuele Cortese, MD, PhD</div>
-          <div class="memb_affil">
-            University of Southampton <img class="flag" src="img/gb.svg" />
-          </div>
-          <div class="memb_affil">
-            Solent NHS Trust <img class="flag" src="img/gb.svg" />
-          </div>
-          <div class="memb_affil">
-            New York University <img class="flag" src="img/us.svg" />
-          </div>
-          <div class="memb_affil">
-            University of Bari<img class="flag" src="img/it.svg" />
-          </div>
-          <div class="read_more_icons">
-            <div class="icons">
-              <a href="mailto: samuelecortese@gmail.com" class="button"
-                ><i class="fas fa-envelope"></i
-              ></a>
-            </div>
-            <div class="icons">
-              <a
-                href="https://www.southampton.ac.uk/people/5xf5yj/professor-samuele-cortese"
-                target="_blank"
-                ><i class="fas fa-university"></i
-              ></a>
-            </div>
-            <div class="icons">
-              <a href="https://twitter.com/CorteseSamuele" target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-            </div>
-          </div>
-          <div class="read_more">
-            <button class="readmore_button" id="readmore_buttonSC">
-              <div>Read more</div>
-              <div class="plusIcon" id="plusIconSC">
-                <i class="fas fa-plus"></i>
-              </div>
-            </button>
-            <div class="read_more_text" id="read_more_textSC">
-              Samuele Cortese is currently Professor of Child and Adolescent
-              Psychiatry at the University of Southampton and Honorary
-              Consultant Child and Adolescent Psychiatry for Solent NHS Trust.
-              He ranks #1 worldwide in terms of expertise on ADHD and #2 in
-              child psychiatry according to Expertscape.
-            </div>
-          </div>
-        </div>
-
-        <div class="memb">
-          <img src="photo/photo_solmi-resized.jpeg" class="photo" />
-          <div class="memb_name">Marco Solmi, MD, PhD</div>
-          <div class="memb_affil">
-            University of Ottawa <img class="flag" src="img/ca.svg" />
-          </div>
-          <div class="memb_affil">
-            Charité University Medicine <img class="flag" src="img/de.svg" />
-          </div>
-          <div class="memb_affil">&nbsp;</div>
-          <div class="memb_affil">&nbsp;</div>
-          <div class="read_more_icons">
-            <div class="icons">
-              <a href="mailto: msolmi@toh.ca" class="button"
-                ><i class="fas fa-envelope"></i
-              ></a>
-            </div>
-            <div class="icons">
-              <a
-                href="https://med.uottawa.ca/psychiatry/people/solmi-marco"
-                target="_blank"
-                ><i class="fas fa-university"></i
-              ></a>
-            </div>
-            <div class="icons">
-              <a href="https://twitter.com/solmi_marco" target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-            </div>
-          </div>
-          <div class="read_more">
-            <button class="readmore_button" id="readmore_buttonMS">
-              <div>Read more</div>
-              <div class="plusIcon" id="plusIconMS">
-                <i class="fas fa-plus"></i>
-              </div>
-            </button>
-            <div class="read_more_text" id="read_more_textMS">
-              Marco Solmi is Associate Professor and Director of Research,
-              Psychiatry Department at University of Ottawa. His methodological
-              focus is on evidence synthesis and real-world data. His clinical
-              focus is on prevention/early intervention for mental disorders,
-              physical health in mental disorders, and psychopharmacology. He is
-              among Clarivate Highly Cited Scientists in PSychiatry and
-              Psychology. He has authored over 400 publications. He leads the
-              <a href="https://solmilab.com" style="color: red">SCIENCES lab</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
+    </footer>
     <script src="script/index.js"></script>
   </body>
 </html>

@@ -1,316 +1,113 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a");
+  fetch("/img/background_main_img.svg")
+    .then((response) => response.text())
+    .then((svgContent) => {
+      const svgContainer = document.getElementById("svgContainer");
+      svgContainer.innerHTML = svgContent;
 
-  if (sections.length === navLinks.length) {
-    function highlightNavLink() {
-      let scrolled = false;
+      const svgElement = svgContainer.querySelector("svg");
+      if (svgElement) {
+        const figIds = ["step_uno", "step_dos", "step_tres", "step_quatro"];
+        const tooltips = {
+          step_uno:
+            "All U-REACH projects starts by a comprehensive synthesis of any systematic review with (or without) meta-analysis on a broad topic.",
+          step_dos:
+            "Then, a critical step is to appraise the methodological quality of both the reviews, and the primary studies.",
+          step_tres:
+            "Once all studies have been synthesized, it is time to assess the effects of the predictors, and to rate the certainty of evidence.",
+          step_quatro:
+            "Last (but not least), you need to create a web platform to share this info with a wide audience. Do not worry, you will find open code of our platforms below !",
+        };
 
-      if (document.documentElement.scrollTop === 0) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-        });
-        navLinks[0].classList.add("active");
-        scrolled = false;
-      } else {
-        sections.forEach((section, idx) => {
-          const rect = section.getBoundingClientRect();
-          const threshold = window.innerHeight * 0.5;
-          const isVisible = rect.top <= threshold && rect.bottom >= threshold;
+        // Create a single tooltip element
+        const tooltip = document.createElement("div");
+        tooltip.className = "tooltip";
+        document.body.appendChild(tooltip);
 
-          if (isVisible) {
-            navLinks.forEach((link) => {
-              link.classList.remove("active");
-            });
-            navLinks[idx].classList.add("active");
-            scrolled = true;
+        function showTooltip(event, text) {
+          tooltip.innerText = text;
+          tooltip.style.display = "block";
+          positionTooltip(event);
+        }
+
+        function hideTooltip() {
+          tooltip.style.display = "none";
+        }
+
+        function positionTooltip(event) {
+          const tooltipRect = tooltip.getBoundingClientRect();
+          const scrollLeft =
+            window.pageXOffset || document.documentElement.scrollLeft;
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          let left = event.pageX + 40; // 40px to the right of the cursor
+          let top = event.pageY - tooltipRect.height / 2; // Vertically center with the cursor
+
+          // Adjust if tooltip goes off the right edge of the window
+          if (left + tooltipRect.width > window.innerWidth + scrollLeft) {
+            left = event.pageX - tooltipRect.width - 10; // 10px to the left of the cursor
+          }
+
+          // Adjust if tooltip goes off the bottom edge of the window
+          if (top + tooltipRect.height > window.innerHeight + scrollTop) {
+            top = window.innerHeight + scrollTop - tooltipRect.height - 10;
+          }
+
+          tooltip.style.left = `${left}px`;
+          tooltip.style.top = `${top}px`;
+        }
+
+        function handleMouseOver(event, figId) {
+          const figElement = svgElement.getElementById(figId);
+          if (figElement) {
+            figElement.classList.add("hovered");
+            showTooltip(event, tooltips[figId] || "Tooltip text");
+          }
+        }
+
+        function handleMouseOut(figId) {
+          const figElement = svgElement.getElementById(figId);
+          if (figElement) {
+            figElement.classList.remove("hovered");
+          }
+          hideTooltip();
+        }
+
+        function handleMouseMove(event) {
+          if (tooltip.style.display === "block") {
+            positionTooltip(event);
+          }
+        }
+
+        figIds.forEach((figId) => {
+          const figElement = svgElement.getElementById(figId);
+          if (figElement) {
+            figElement.addEventListener("mouseover", (event) =>
+              handleMouseOver(event, figId)
+            );
+            figElement.addEventListener("mouseout", () =>
+              handleMouseOut(figId)
+            );
+            figElement.addEventListener("mousemove", handleMouseMove);
+          }
+
+          const textElement = svgElement.getElementById(
+            `text_${figId.split("_")[1]}`
+          );
+          if (textElement) {
+            textElement.addEventListener("mouseover", (event) =>
+              handleMouseOver(event, figId)
+            );
+            textElement.addEventListener("mouseout", () =>
+              handleMouseOut(figId)
+            );
+            textElement.addEventListener("mousemove", handleMouseMove);
           }
         });
+      } else {
+        console.error("SVG element not found.");
       }
-
-      if (!scrolled) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-        });
-        navLinks[0].classList.add("active");
-      }
-    }
-
-    window.addEventListener("scroll", highlightNavLink);
-    window.addEventListener("resize", highlightNavLink);
-    highlightNavLink();
-  } else {
-    console.error(
-      "Number of sections doesn't match number of navigation links."
-    );
-  }
-});
-//
-//
-//
-const readMoreButtonMS = document.getElementById("readmore_buttonMS");
-const readMoreContentMS = document.getElementById("read_more_textMS");
-const plusIconMS = document.getElementById("plusIconMS");
-const readMoreButtonCG = document.getElementById("readmore_buttonCG");
-const readMoreContentCG = document.getElementById("read_more_textCG");
-const plusIconCG = document.getElementById("plusIconCG");
-const readMoreButtonSC = document.getElementById("readmore_buttonSC");
-const readMoreContentSC = document.getElementById("read_more_textSC");
-const plusIconSC = document.getElementById("plusIconSC");
-// const readMoreButtonJF = document.getElementById("readmore_buttonJF");
-// const readMoreContentJF = document.getElementById("read_more_textJF");
-// const plusIconJF = document.getElementById("plusIconJF");
-// const readMoreButtonRD = document.getElementById("readmore_buttonRD");
-// const readMoreContentRD = document.getElementById("read_more_textRD");
-// const plusIconRD = document.getElementById("plusIconRD");
-// const readMoreButtonPFP = document.getElementById("readmore_buttonPFP");
-// const readMoreContentPFP = document.getElementById("read_more_textPFP");
-// const plusIconPFP = document.getElementById("plusIconPFP");
-// const readMoreButtonEV = document.getElementById("readmore_buttonEV");
-// const readMoreContentEV = document.getElementById("read_more_textEV");
-// const plusIconEV = document.getElementById("plusIconEV");
-
-readMoreButtonMS.addEventListener("click", function () {
-  readMoreButtonMS.classList.toggle("rmv_border");
-  readMoreContentMS.classList.toggle("show-read-more");
-  readMoreContentMS.classList.toggle("add_border");
-  plusIconMS.classList.toggle("rotate-45");
-});
-
-readMoreButtonCG.addEventListener("click", function () {
-  readMoreButtonCG.classList.toggle("rmv_border");
-  readMoreContentCG.classList.toggle("show-read-more");
-  readMoreContentCG.classList.toggle("add_border");
-  plusIconCG.classList.toggle("rotate-45");
-});
-
-readMoreButtonSC.addEventListener("click", function () {
-  readMoreButtonSC.classList.toggle("rmv_border");
-  readMoreContentSC.classList.toggle("show-read-more");
-  readMoreContentSC.classList.toggle("add_border");
-  plusIconSC.classList.toggle("rotate-45");
-});
-
-// readMoreButtonJF.addEventListener("click", function () {
-//   readMoreButtonJF.classList.toggle("rmv_border");
-//   readMoreContentJF.classList.toggle("show-read-more");
-//   readMoreContentJF.classList.toggle("add_border");
-//   plusIconJF.classList.toggle("rotate-45");
-// });
-// readMoreButtonRD.addEventListener("click", function () {
-//   readMoreButtonRD.classList.toggle("rmv_border");
-//   readMoreContentRD.classList.toggle("show-read-more");
-//   readMoreContentRD.classList.toggle("add_border");
-//   plusIconRD.classList.toggle("rotate-45");
-// });
-// readMoreButtonEV.addEventListener("click", function () {
-//   readMoreButtonEV.classList.toggle("rmv_border");
-//   readMoreContentEV.classList.toggle("show-read-more");
-//   readMoreContentEV.classList.toggle("add_border");
-//   plusIconEV.classList.toggle("rotate-45");
-// });
-// readMoreButtonPFP.addEventListener("click", function () {
-//   readMoreButtonPFP.classList.toggle("rmv_border");
-//   readMoreContentPFP.classList.toggle("show-read-more");
-//   readMoreContentPFP.classList.toggle("add_border");
-//   plusIconPFP.classList.toggle("rotate-45");
-// });
-var NUM_PARTICLES = 300,
-  MAX_SPEED = 0.00001,
-  particles = [],
-  imageData,
-  pixels,
-  w = window.innerWidth,
-  h = window.innerHeight,
-  mouse = {
-    x: 0,
-    y: 0,
-  },
-  canvasParticles = document.querySelector(".js-canvas-particles"),
-  ctxParticles = canvasParticles.getContext("2d");
-
-init();
-
-function init() {
-  initEvents();
-  initStage();
-
-  run();
-}
-
-function initEvents() {
-  window.addEventListener("resize", initStage);
-  document.addEventListener("mousemove", onMouseMove);
-}
-
-function initStage() {
-  w = window.innerWidth;
-  h = window.innerHeight;
-
-  canvasParticles.setAttribute("width", w);
-  canvasParticles.setAttribute("height", h);
-
-  initParticles();
-}
-
-function onMouseMove(e) {
-  mouse = {
-    x: e.clientX,
-    y: e.clientY,
-  };
-}
-
-function initParticles() {
-  particles = [];
-
-  var i = NUM_PARTICLES,
-    p,
-    x,
-    y,
-    velX,
-    velY,
-    r;
-
-  while (i--) {
-    x = randomBetween(0, w);
-    y = randomBetween(0, h);
-    r = randomBetween(1, 3);
-
-    velX = randomBetween(-MAX_SPEED, MAX_SPEED);
-    velY = randomBetween(-MAX_SPEED, MAX_SPEED);
-
-    p = new Particle(x, y, velX, velY, r);
-    particles.push(p);
-  }
-}
-
-function Particle(x, y, velX, velY, r) {
-  this.x = x;
-  this.y = y;
-  this.velX = velX;
-  this.velY = velY;
-  this.radius = r;
-
-  this.update = function () {
-    this.x += this.velX;
-    this.y += this.velY;
-
-    this.x = Math.round(this.x);
-    this.y = Math.round(this.y);
-
-    if (this.x <= 0 || this.x >= w) {
-      this.velX = -this.velX;
-    }
-
-    if (this.y <= 0 || this.y >= h) {
-      this.velY = -this.velY;
-    }
-  };
-
-  this.distanceTo = function (p) {
-    var dx = p.x - this.x,
-      dy = p.y - this.y;
-
-    return Math.sqrt(dx * dx + dy * dy);
-  };
-
-  this.getIndex = function () {
-    return ((this.x | 0) + (this.y | 0) * w) * 4;
-  };
-}
-
-function run() {
-  window.requestAnimationFrame(run);
-
-  ctxParticles.clearRect(0, 0, w, h);
-
-  var i = particles.length,
-    distance,
-    distanceMouse,
-    q,
-    p1,
-    p2;
-
-  while (i--) {
-    p1 = particles[i];
-    p1.update();
-
-    ctxParticles.beginPath();
-    ctxParticles.fillStyle = "rgba(255, 255, 255, 0.8)";
-    ctxParticles.arc(p1.x, p1.y, p1.radius, 0, 2 * Math.PI, false);
-    ctxParticles.fill();
-    ctxParticles.closePath();
-
-    distanceMouse = p1.distanceTo(mouse);
-
-    if (distanceMouse <= w * 0.2) {
-      connect(p1, mouse);
-    }
-
-    for (q = 0; q < particles.length; q++) {
-      p2 = particles[q];
-      distance = p2.distanceTo(p1);
-
-      if (p2 !== p1 && distance <= w * 0.05) {
-        connect(p1, p2);
-      }
-    }
-  }
-}
-
-function connect(p1, p2) {
-  ctxParticles.beginPath();
-  ctxParticles.strokeStyle = "rgba(255, 255, 255, 0.2)";
-
-  ctxParticles.moveTo(p1.x, p1.y);
-  ctxParticles.lineTo(p2.x, p2.y);
-  ctxParticles.stroke();
-  ctxParticles.closePath();
-}
-
-// util functions
-function randomBetween(min, max, round) {
-  var rand = Math.random() * (max - min + 1) + min;
-  if (round === true) {
-    return Math.floor(rand);
-  } else {
-    return rand;
-  }
-}
-
-$(".slider").slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows: true,
-  dots: false,
-  centerMode: true,
-  variableWidth: true,
-  infinite: true,
-  focusOnSelect: true,
-  cssEase: "linear",
-  touchMove: true,
-  prevArrow: '<button class="slick-prev"> < </button>',
-  nextArrow: '<button class="slick-next"> > </button>',
-
-  //         responsive: [
-  //             {
-  //               breakpoint: 576,
-  //               settings: {
-  //                 centerMode: false,
-  //                 variableWidth: false,
-  //               }
-  //             },
-  //         ]
-});
-
-var imgs = $(".slider img");
-imgs.each(function () {
-  var item = $(this).closest(".item");
-  item.css({
-    "background-image": "url(" + $(this).attr("src") + ")",
-    "background-position": "center",
-    "-webkit-background-size": "cover",
-    "background-size": "cover",
-  });
-  $(this).hide();
+    })
+    .catch((error) => console.error("Error loading SVG:", error));
 });
