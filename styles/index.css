@@ -77,59 +77,98 @@ body {
 }
 
 .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap-reverse;
   background-color: #ffffff;
+  padding-top: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    gap: 0rem;
+  }
+}
+.hero #container_right {
   text-wrap: balance;
   line-height: 200%;
   color: #2d2d2d;
   padding: 2rem 0;
-  text-align: center;
+  text-align: left;
 }
 @media screen and (max-width: 1300px) {
-  .hero {
+  .hero #container_right {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 1rem 0;
   }
 }
 @media screen and (max-width: 768px) {
-  .hero {
+  .hero #container_right {
     padding: 1rem 0;
   }
 }
-.hero h1 {
+.hero #container_right h1 {
   margin-top: 0;
   padding-top: 0;
   font-size: 36px;
   margin-bottom: 0.5rem;
+  max-width: 35ch;
 }
-.hero p {
+@media screen and (max-width: 1300px) {
+  .hero #container_right h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.hero #container_right p {
   font-size: 1rem;
   margin-bottom: 1.5rem;
   max-width: 50ch;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 110%;
   text-wrap: balance;
+}
+@media screen and (max-width: 1300px) {
+  .hero #container_right p {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0rem;
+  }
+}
+.hero #container_right .logos {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  display: flex;
+  gap: 1rem;
+}
+@media screen and (max-width: 1300px) {
+  .hero #container_right .logos {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.hero #container_right .logos img {
+  max-height: 40px;
+  padding-bottom: 0.5rem;
+  filter: grayscale(100%);
+  filter: grayscale(100%) brightness(1.2) contrast(1.2);
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+.hero #container_right .logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 .hero .feature-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.hero .feature-grid img {
-  max-width: 500px;
-}
-
-.logos {
-  background-color: #ffffff;
-  padding: 40px 0;
-}
-.logos .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-.logos .container img {
-  max-height: 50px;
 }
 
 .subtitle {
@@ -382,13 +421,8 @@ body {
 }
 
 .hovered {
-  filter: brightness(110%) !important;
-  cursor: pointer;
-}
-
-.hovered {
-  filter: brightness(110%) !important;
-  cursor: pointer;
+  filter: brightness(90%) !important;
+  background: rgba(90, 90, 108, 0.75);
 }
 
 .team {

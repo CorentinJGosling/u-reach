@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const svgElement = svgContainer.querySelector("svg");
       if (svgElement) {
-        const figIds = ["step_uno", "step_dos", "step_tres", "step_quatro"];
+        const figIds = ["step_one", "step_two", "step_three", "step_four"];
         const tooltips = {
-          step_uno:
+          step_one:
             "All U-REACH projects starts by a comprehensive synthesis of any systematic review with (or without) meta-analysis on a broad topic.",
-          step_dos:
+          step_two:
             "Then, a critical step is to appraise the methodological quality of both the reviews, and the primary studies.",
-          step_tres:
+          step_three:
             "Once all studies have been synthesized, it is time to assess the effects of the predictors, and to rate the certainty of evidence.",
-          step_quatro:
+          step_four:
             "Last (but not least), you need to create a web platform to share this info with a wide audience. Do not worry, you will find open code of our platforms below !",
         };
 
