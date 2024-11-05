@@ -173,6 +173,14 @@ body {
       text-align: left;
       display: flex;
       gap: 1rem;
+      // .dysco {
+      //   width: 250px;
+      // }
+      // .sciences {
+      //   width: 100% important;
+      //   height: 250px;
+      //   border: 2px solid red;
+      // }
       @media screen and (max-width: 1300px) {
         text-align: center;
         margin-left: auto;
@@ -182,11 +190,11 @@ body {
       }
 
       img {
-        max-height: 40px;
+        max-height: 60px;
         padding-bottom: 0.5rem;
         filter: grayscale(100%);
         // Optional: Adjust brightness and contrast for better visibility
-        filter: grayscale(100%) brightness(1.2) contrast(1.2);
+        filter: grayscale(100%) brightness(1.1) contrast(1.1);
         // Add a smooth transition for hover effect
         transition: all 0.3s ease;
         opacity: 0.4;
@@ -196,6 +204,49 @@ body {
           opacity: 1;
         }
       }
+    }
+  }
+  .btn_hero_text {
+    color: $primary-color;
+    font-style: italic;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    gap: 0;
+    width: auto;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+    .btn_img {
+      background-color: $primary-color;
+      width: 50px;
+      text-align: center;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      .fa-arrow-down {
+        color: #fff;
+        font-weight: bold;
+        border-bottom: 3px solid #fff;
+      }
+    }
+    .btn_text {
+      background-color: #bdaeeb;
+      color: #fff;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
   #svgContainer svg {

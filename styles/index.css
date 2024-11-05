@@ -165,16 +165,58 @@ body {
   }
 }
 .hero #container_right .logos img {
-  max-height: 40px;
+  max-height: 60px;
   padding-bottom: 0.5rem;
   filter: grayscale(100%);
-  filter: grayscale(100%) brightness(1.2) contrast(1.2);
+  filter: grayscale(100%) brightness(1.1) contrast(1.1);
   transition: all 0.3s ease;
   opacity: 0.4;
 }
 .hero #container_right .logos img:hover {
   filter: grayscale(0%);
   opacity: 1;
+}
+.hero .btn_hero_text {
+  color: #8967ef;
+  font-style: italic;
+}
+.hero .btn_hero_text span {
+  font-weight: bold;
+}
+.hero .btn_container {
+  display: flex;
+  gap: 0;
+  width: auto;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.hero .btn_container:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.hero .btn_container .btn_img {
+  background-color: #8967ef;
+  width: 50px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.hero .btn_container .btn_img .fa-arrow-down {
+  color: #fff;
+  font-weight: bold;
+  border-bottom: 3px solid #fff;
+}
+.hero .btn_container .btn_text {
+  background-color: #bdaeeb;
+  color: #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .hero #svgContainer svg {
   max-width: 500px;
