@@ -391,6 +391,9 @@ body {
   margin: 1rem 1rem;
   font-weight: 100;
 }
+.about .figureach {
+  max-width: 80%;
+}
 .about .btn-primary {
   background-color: #ffffff;
   color: #8967ef;

@@ -431,7 +431,6 @@ body {
     margin-bottom: 1rem;
     font-weight: 100;
   }
-
   blockquote {
     font-style: italic;
     text-wrap: balance;
@@ -440,7 +439,9 @@ body {
     margin: 1rem 1rem;
     font-weight: 100;
   }
-
+  .figureach {
+    max-width: 80%;
+  }
   .btn-primary {
     @include button($white, $primary-color);
     display: inline-flex;
