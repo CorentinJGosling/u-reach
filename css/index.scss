@@ -1,3 +1,4 @@
+@use "sass:color";
 // Variables
 * {
   margin: 0;
@@ -45,10 +46,10 @@ $white: #ffffff;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: darken($bg-color, 10%);
+    // Replace darken() with the new color.adjust() function
+    background-color: color.adjust($bg-color, $lightness: -10%);
   }
 }
-
 // Global styles
 body {
   font-family: "Inter", sans-serif;
@@ -280,10 +281,11 @@ body {
   background-color: rgba(137, 103, 239, 0.2);
 }
 // Projects section
+// SCSS for Projects Section (Original Grid Solution)
+// SCSS for Projects Section (Horizontal Carousel)
 .projects {
   padding: 2rem 0;
   padding-bottom: 4rem;
-  background: rgb(255, 255, 255);
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 1) 0%,
@@ -297,59 +299,61 @@ body {
     font-weight: 100;
   }
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+  // Styles for the horizontal slider container
+  .project-slider {
+    display: flex;       // Lays out cards in a row
+    overflow-x: auto;    // Enables horizontal scrolling
+    gap: 20px;           // Adds space between the cards
+    padding: 1rem;       // Prevents card shadows from being cut off
+  }
 
-    .project-card {
-      background-color: $white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      max-width: 450px;
-      margin-left: auto;
-      margin-right: auto;
+  // Styles for the cards INSIDE the slider
+  .project-card {
+    // Sets a fixed base width for each card so they don't shrink
+    // flex: flex-grow | flex-shrink | flex-basis
+    flex: 0 0 320px;
 
-      img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
+    // --- Your original card styling ---
+    background-color: $white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-      .project-info {
-        padding: 20px;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-        h3 {
-          margin-bottom: 0;
-          padding-bottom: 0;
+    .project-info {
+      padding: 20px;
+
+      h3 { margin-bottom: 0; }
+      p { margin-top: 0; margin-bottom: 20px; }
+
+      .project-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .btn-primary {
+          @include button($primary-color, $white);
         }
-
-        p {
-          margin-top: 0;
-          padding-top: 0;
-          margin-bottom: 20px;
-        }
-
-        .project-buttons {
-          // @include flex-center;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-
-          .btn-primary {
-            @include button($primary-color, $white);
-          }
-
-          .btn-secondary {
-            @include button($white, $primary-color);
-            border: 1px solid $primary-color;
-          }
+        .btn-secondary {
+          @include button($white, $primary-color);
+          border: 1px solid $primary-color;
         }
       }
     }
   }
 }
+
+
+
+
+
+
+
 
 // Other platforms section
 .other-platforms {
