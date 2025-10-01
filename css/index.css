@@ -260,7 +260,8 @@ body {
   font-weight: 100;
 }
 .projects .project-slider {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   overflow-x: auto;
   gap: 20px;
   padding: 1rem;
