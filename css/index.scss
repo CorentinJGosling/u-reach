@@ -306,6 +306,11 @@ body {
     overflow-x: auto;    // Enables horizontal scrolling
     gap: 20px;           // Adds space between the cards
     padding: 1rem;       // Prevents card shadows from being cut off
+
+      @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;       // Lays out cards in a row
+      }
+
   }
 
   // Styles for the cards INSIDE the slider
