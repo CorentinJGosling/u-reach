@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EBI-BD | Evidence-Based Interventions for Bipolar Disorder</title>
+    <!-- Use Inter font, but include varying weights for better hierarchy -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" href="../website/img/logo.jpg" />
+    <style>
+      /* ---------- Global & Reset ---------- */
+      :root {
+        --primary: #4f46e5;      /* Indigo 600 */
+        --primary-dark: #3730a3; /* Indigo 800 */
+        --primary-light: #e0e7ff;/* Indigo 100 */
+        --text-main: #1e293b;    /* Slate 800 */
+        --text-muted: #475569;   /* Slate 600 */
+        --bg-main: #f8fafc;      /* Slate 50 */
+        --bg-white: #ffffff;
+        --border-color: #e2e8f0; /* Slate 200 */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --radius-lg: 12px;
+        --radius-xl: 16px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: var(--text-main);
+        background-color: var(--bg-main);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s ease;
+      }
+
+      /* ---------- Header ---------- */
+      .header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .header nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .header .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--text-main);
+        letter-spacing: -0.5px;
+      }
+      .header .logo img {
+        width: 2rem;
+        border-radius: 4px;
+      }
+      .header .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+      .header .nav-links a {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text-muted);
+      }
+      .header .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
+        color: #fff;
+        padding: 6rem 1.5rem 8rem; /* Extra bottom padding for overlap */
+        text-align: center;
+        position: relative;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==');
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 850px;
+        margin: 0 auto;
+      }
+      .hero .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.4rem 1rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        backdrop-filter: blur(4px);
+      }
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+        letter-spacing: -1px;
+      }
+      .hero p {
+        font-size: 1.15rem;
+        color: #e0e7ff;
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .hero .cta-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      /* ---------- Buttons ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.75rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border: none;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn-white {
+        background: var(--bg-white);
+        color: var(--primary-dark);
+        box-shadow: var(--shadow-md);
+      }
+      .btn-white:hover {
+        box-shadow: var(--shadow-lg);
+      }
+      .btn-outline {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.8);
+      }
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+        box-shadow: var(--shadow-md);
+      }
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* ---------- Overlapping Stats ---------- */
+      .stats-wrapper {
+        max-width: 1000px;
+        margin: -4rem auto 2rem; /* Pulls it up over the hero */
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 10;
+      }
+      .stats-card {
+        background: var(--bg-white);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg);
+        padding: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        text-align: center;
+        border: 1px solid var(--border-color);
+      }
+      .stat-item .number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+      .stat-item .label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-muted);
+      }
+
+      /* ---------- Generic Layout ---------- */
+      .section {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 5rem 1.5rem;
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-main);
+        letter-spacing: -0.5px;
+        margin-bottom: 1rem;
+      }
+      /* Accent line under titles */
+      .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--primary);
+        margin: 1rem auto 0;
+        border-radius: 2px;
+      }
+      .section-sub {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* ---------- About ---------- */
+      .about-card {
+        background: var(--bg-white);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        padding: 3rem;
+        box-shadow: var(--shadow-md);
+      }
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+      }
+      .about-text p + p {
+        margin-top: 1.25rem;
+      }
+      .about-text strong {
+        color: var(--text-main);
+      }
+
+      /* ---------- Grid Cards (Scope & Features) ---------- */
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .card {
+        background: var(--bg-white);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-light);
+      }
+      .card .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: var(--primary-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        color: var(--primary);
+        margin-bottom: 1.25rem;
+      }
+      .card h3 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: var(--text-main);
+      }
+      .card p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      /* ---------- Treatments Tags ---------- */
+      .treatment-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 2.5rem;
+      }
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--bg-white);
+        border: 1px solid var(--border-color);
+        padding: 0.5rem 1.25rem;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-main);
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.2s ease;
+      }
+      .tag:hover {
+        transform: translateY(-2px);
+      }
+      .tag i {
+        color: var(--primary);
+      }
+      .tag .count {
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        font-size: 0.75rem;
+        padding: 0.15rem 0.6rem;
+        border-radius: 12px;
+        font-weight: 700;
+      }
+
+      /* ---------- Citation ---------- */
+      .citation-box {
+        background: var(--primary-light);
+        border-left: 4px solid var(--primary);
+        border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+        padding: 2rem;
+        position: relative;
+      }
+      .citation-box i {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        color: rgba(79, 70, 229, 0.15); /* Faint primary color */
+      }
+      .citation-text {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--text-main);
+      }
+      .citation-text strong {
+        color: var(--primary-dark);
+      }
+
+      /* ---------- Footer ---------- */
+      .footer {
+        background: #0f172a; /* Slate 900 */
+        color: #94a3b8; /* Slate 400 */
+        padding: 3rem 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+      .footer .logo-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1.5rem;
+      }
+      .footer .logo-footer img {
+        width: 1.5rem;
+        border-radius: 4px;
+      }
+      .footer-links {
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .footer a {
+        color: #cbd5e1; /* Slate 300 */
+      }
+      .footer a:hover {
+        color: #fff;
+      }
+      .footer p a {
+        color: var(--primary-light);
+        font-weight: 500;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 900px) {
+        .stats-card {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem 1rem;
+        }
+        .grid-3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+        .hero {
+          padding: 4rem 1.5rem 6rem;
+        }
+        .stats-wrapper {
+          margin-top: -3rem;
+        }
+        .stats-card {
+          padding: 1.5rem;
+        }
+        .grid-3, .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .header .nav-links {
+          display: none; /* In a real app, replace with a hamburger menu */
+        }
+        .about-card {
+          padding: 1.5rem;
+        }
+        .section {
+          padding: 3rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav>
+        <a href="https://u-reach.org" class="logo">
+          <img src="../website/img/logo.jpg" alt="U-REACH logo" onerror="this.src='https://via.placeholder.com/40x40?text=UR'"/>
+          U-REACH
+        </a>
+        <ul class="nav-links">
+          <li><a href="https://u-reach.org">Home</a></li>
+          <li><a href="https://ebibd-database.org">Platform</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#citation">Citation</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge">
+          <i class="fa-solid fa-star"></i> U-REACH Project &middot; Published in The BMJ
+        </div>
+        <h1>Evidence-Based Interventions for Bipolar Disorder</h1>
+        <p>
+          The first living umbrella review synthesizing all meta-analytic evidence
+          on treatments for bipolar disorder across age groups, mood phases, and
+          outcomes &mdash; with an open-access decision-aid platform.
+        </p>
+        <div class="cta-group">
+          <a href="https://ebibd-database.org" class="btn btn-white">
+            Explore the Platform <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#citation" class="btn btn-outline">
+            <i class="fa-solid fa-book-open"></i> Read the Paper
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overlapping Stats -->
+    <div class="stats-wrapper">
+      <div class="stats-card">
+        <div class="stat-item">
+          <div class="number">77</div>
+          <div class="label">Meta-analyses Included</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">116</div>
+          <div class="label">Unique Treatments</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">2,510</div>
+          <div class="label">GRADE-rated Associations</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">133</div>
+          <div class="label">Clinical Outcomes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <h2 class="section-title">About EBI-BD</h2>
+        <p class="section-sub">
+          Bridging the gap between scientific evidence and clinical practice.
+        </p>
+      </div>
+      <div class="about-card">
+        <div class="about-text">
+          <p>
+            Bipolar disorder affects approximately <strong>39.5 million people worldwide</strong>.
+            Nearly half of individuals with BD do not adhere to prescribed
+            treatments, often due to perceived inefficacy, poor tolerability, or
+            insufficient involvement in clinical decision-making.
+          </p>
+          <p>
+            EBI-BD is the first <strong>living umbrella review</strong> to
+            consolidate all available network and pairwise meta-analytic evidence
+            on the efficacy and safety of treatments for bipolar disorder. Built
+            within the
+            <a href="https://u-reach.org" style="color: var(--primary); font-weight: 600;">U-REACH framework</a>, 
+            EBI-BD assesses the certainty of evidence using the GRADE framework
+            and makes all results freely accessible through an interactive digital
+            platform.
+          </p>
+          <p>
+            The platform is designed to support
+            <strong>shared decision-making</strong> between clinicians and
+            individuals with lived experience of BD, providing transparent,
+            up-to-date evidence to inform personalized treatment choices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Scope of the Review</h2>
+        <p class="section-sub">
+          Comprehensive coverage across phases, age groups, and interventions.
+        </p>
+      </div>
+      
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-wave-square"></i></div>
+          <h3>All Mood Phases</h3>
+          <p>
+            Bipolar depression, mania/mixed episodes, and maintenance phase
+            &mdash; covering the full illness trajectory.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-users"></i></div>
+          <h3>All Age Groups</h3>
+          <p>
+            Evidence from adults, children and adolescents, and mixed-age
+            populations to support lifespan care.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Efficacy &amp; Safety</h3>
+          <p>
+            45 efficacy and 88 safety outcomes, with certainty rated as high,
+            moderate, low, or very low.
+          </p>
+        </div>
+      </div>
+
+      <!-- Treatment types tags -->
+      <div class="treatment-tags">
+        <div class="tag">
+          <i class="fa-solid fa-pills"></i> Pharmacological
+          <span class="count">74</span>
+        </div>
+        <div class="tag">
+          <i class="fa-solid fa-bolt"></i> Brain Stimulation
+          <span class="count">18</span>
+        </div>
+        <div class="tag">
+          <i class="fa-solid fa-leaf"></i> Nutraceutical
+          <span class="count">13</span>
+        </div>
+        <div class="tag">
+          <i class="fa-solid fa-comments"></i> Psychosocial
+          <span class="count">8</span>
+        </div>
+        <div class="tag">
+          <i class="fa-solid fa-clock"></i> Circadian Rhythm
+          <span class="count">3</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Features -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Platform Features</h2>
+        <p class="section-sub">
+          Interactive tools designed for clinicians, researchers, and guideline developers.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-database"></i></div>
+          <h3>Interactive Database</h3>
+          <p>
+            Filter and explore the full dataset by age group, BD phase,
+            intervention, control, outcome, and certainty of evidence. Visualize
+            distributions and download data freely.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-sliders"></i></div>
+          <h3>Preference-Based Tool</h3>
+          <p>
+            Select which adverse events matter most and assign personalized
+            weights. The TOPSIS algorithm generates individualized medication
+            rankings based on your priorities.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-rotate"></i></div>
+          <h3>Living Review</h3>
+          <p>
+            Updated at least every two years, with additional updates triggered
+            by major changes in the literature, ensuring the evidence stays
+            current.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-unlock"></i></div>
+          <h3>Open Access</h3>
+          <p>
+            All data, results, and tools are freely available. The platform was
+            co-designed with clinicians, guideline makers, and people with lived
+            experience of BD.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="https://ebibd-database.org" class="btn btn-primary">
+          Launch EBI-BD Platform <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.85rem; margin-left: 0.25rem;"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Citation -->
+    <section class="section" id="citation">
+      <div class="section-header">
+        <h2 class="section-title">Citation</h2>
+        <p class="section-sub">How to reference this work in your research</p>
+      </div>
+      
+      <div class="citation-box">
+        <i class="fa-solid fa-quote-right"></i>
+        <div class="citation-text">
+          De Prisco M*, Oliva V*, Miola A, Fornaro M, [...], Pereira CT,
+          Cortese S, Radua J, Gosling CJ<sup>#</sup>, Solmi M<sup>#</sup>.
+          <strong>Evidence-based interventions for bipolar disorder (EBI-BD): an
+          Umbrella-Review, Evaluation, Analysis, and Communication Hub (U-REACH)
+          project in bipolar disorder across phases and age groups.</strong>
+          <em>The BMJ</em>. 2026.
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="logo-footer">
+        <img src="../website/img/logo.jpg" alt="U-REACH logo" onerror="this.src='https://via.placeholder.com/40x40?text=UR'" />
+        U-REACH
+      </div>
+      <div class="footer-links">
+        <a href="https://u-reach.org">U-REACH Home</a>
+        <a href="https://ebibd-database.org">EBI-BD Platform</a>
+        <a href="https://github.com/CorentinJGosling/u-reach">GitHub</a>
+      </div>
+      <p>
+        &copy; 2026 EBI-BD &mdash; A
+        <a href="https://u-reach.org">U-REACH</a> project. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
