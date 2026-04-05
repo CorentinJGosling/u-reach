@@ -190,6 +190,13 @@ body {
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
+@media screen and (max-width: 1300px) {
+  .hero .btn_container {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+}
 .hero .btn_container:hover {
   opacity: 0.8;
   cursor: pointer;
