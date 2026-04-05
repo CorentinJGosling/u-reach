@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("/website/img/background_main_img.svg")
+  fetch("website/img/background_main_img.svg")
     .then((response) => response.text())
     .then((svgContent) => {
       const svgContainer = document.getElementById("svgContainer");
