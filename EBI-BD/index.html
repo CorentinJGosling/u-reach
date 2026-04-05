@@ -157,7 +157,53 @@
         justify-content: center;
         flex-wrap: wrap;
       }
-      
+
+      /* ---------- Download Row ---------- */
+      .download-row {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .download-divider {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .download-group {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .download-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0.4rem 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .download-link:hover {
+        color: #fff;
+        border-color: #fff;
+      }
+      .download-link i {
+        font-size: 0.8rem;
+      }
+      .download-sep {
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 1.2rem;
+        user-select: none;
+      }
+
       /* ---------- Buttons ---------- */
       .btn {
         display: inline-flex;
@@ -501,7 +547,7 @@
         <p>
           The first living umbrella review synthesizing all meta-analytic evidence
           on treatments for bipolar disorder across age groups, mood phases, and
-          outcomes &mdash; with an open-access decision-aid platform.
+          outcomes - with an open-access decision-aid platform.
         </p>
         <div class="cta-group">
           <a href="https://ebibd-database.org" class="btn btn-white">
@@ -510,6 +556,18 @@
           <a href="#citation" class="btn btn-outline">
             <i class="fa-solid fa-book-open"></i> Read the Paper
           </a>
+        </div>
+        <div class="download-row">
+          <span class="download-divider">Open-access resources</span>
+          <div class="download-group">
+            <a href="u-reach_ebibd_processing.R" download class="download-link">
+              <i class="fa-solid fa-code"></i> R Analysis Script
+            </a>
+            <span class="download-sep">&middot;</span>
+            <a href="ebibd_dataset_input_20241119.xlsx" download class="download-link">
+              <i class="fa-solid fa-table"></i> Raw Dataset (.xlsx)
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -587,7 +645,7 @@
           <h3>All Mood Phases</h3>
           <p>
             Bipolar depression, mania/mixed episodes, and maintenance phase
-            &mdash; covering the full illness trajectory.
+            - covering the full illness trajectory.
           </p>
         </div>
         <div class="card">
@@ -720,7 +778,7 @@
         <a href="https://github.com/CorentinJGosling/u-reach">GitHub</a>
       </div>
       <p>
-        &copy; 2026 EBI-BD &mdash; A
+        &copy; 2026 EBI-BD - A
         <a href="https://u-reach.org">U-REACH</a> project. All rights reserved.
       </p>
     </footer>
